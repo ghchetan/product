@@ -1,0 +1,553 @@
+/* ==========================================================================
+   Kitchen Ventilation Systems - Critical CSS
+   Mobile-first responsive design with accessibility focus
+   ========================================================================== */
+
+/* ==========================================================================
+   Font Face Declarations
+   ========================================================================== */
+
+@font-face {
+  font-family: "HelveticaNeue-Regular";
+  src: url("fonts/HelveticaNeue-Regular.woff2") format("woff2"),
+    url("fonts/HelveticaNeue-Regular.woff") format("woff"),
+    url("fonts/HelveticaNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeue-Medium";
+  src: url("fonts/HelveticaNeue-Medium.woff2") format("woff2"),
+    url("fonts/HelveticaNeue-Medium.woff") format("woff"),
+    url("fonts/HelveticaNeue-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeue-Bold";
+  src: url("fonts/HelveticaNeue-Bold.woff2") format("woff2"),
+    url("fonts/HelveticaNeue-Bold.woff") format("woff"),
+    url("fonts/HelveticaNeue-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CSS Custom Properties for maintainable theming */
+:root {
+  /* Colors */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-focus: #3b82f6;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-background: #ffffff;
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+
+  /* Typography */
+  --font-family: "HelveticaNeue-Regular", "HelveticaNeue-Medium",
+    "HelveticaNeue-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+
+  /* Layout */
+  --container-max-width: 1200px;
+  --container-padding: var(--spacing-4);
+  --border-radius: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}
+
+/* ==========================================================================
+   Reset and Base Styles
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   Accessibility Utilities
+   ========================================================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: var(--spacing-2);
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background-color: var(--color-background);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius);
+}
+
+/* Focus management */
+*:focus {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
+
+.main-content {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+/* ==========================================================================
+   Breadcrumb Navigation
+   ========================================================================== */
+
+.breadcrumb {
+  margin-bottom: var(--spacing-6);
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  gap: var(--spacing-2);
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.breadcrumb-link {
+  color: rgba(51, 51, 51, 1);
+  text-decoration: none;
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.breadcrumb-link:focus {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.breadcrumb-current {
+  color: rgba(153, 153, 153, 1);
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   Page Header
+   ========================================================================== */
+
+.page-header {
+  margin-bottom: var(--spacing-12);
+}
+
+.page-title {
+  font-size: var(--font-size-3xl);
+  font-family: "HelveticaNeue-Bold", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-4);
+}
+
+.page-description {
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 65ch;
+}
+
+/* ==========================================================================
+   Product Categories Grid
+   ========================================================================== */
+
+.product-categories {
+  margin-bottom: var(--spacing-16);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+/* ==========================================================================
+   Category Cards
+   ========================================================================== */
+
+.category-card {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.category-card:focus-within {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
+
+.card-content {
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.card-title {
+  font-size: var(--font-size-xl);
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-4);
+  line-height: 1.3;
+}
+
+.card-image-container {
+  width: 100%;
+  margin-bottom: var(--spacing-6);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--color-border-light);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-normal);
+  display: block;
+}
+
+.category-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-button {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-base);
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-width: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left var(--transition-normal);
+}
+
+.card-button:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-button:hover::before {
+  left: 100%;
+}
+
+.card-button:active {
+  transform: translateY(0);
+  background-color: var(--color-primary-hover);
+}
+
+.card-button:focus {
+  background-color: var(--color-primary-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* ==========================================================================
+   Responsive Design - Tablet and Desktop
+   ========================================================================== */
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  :root {
+    --container-padding: var(--spacing-6);
+  }
+
+  .page-title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-8);
+  }
+
+  .card-image {
+    height: 220px;
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: var(--spacing-8);
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-8);
+  }
+
+  .card-image {
+    height: 240px;
+  }
+}
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+  .categories-grid {
+    gap: var(--spacing-10);
+  }
+
+  .card-content {
+    padding: var(--spacing-8);
+  }
+
+  .card-image {
+    height: 260px;
+  }
+}
+
+/* ==========================================================================
+   High Contrast Mode Support
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: #000000;
+    --color-text-secondary: #000000;
+    --color-text-muted: #333333;
+  }
+
+  .category-card {
+    border-width: 2px;
+  }
+
+  .card-button {
+    border: 2px solid var(--color-primary);
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion Support
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .category-card:hover {
+    transform: none;
+  }
+
+  .card-button:hover {
+    transform: none;
+  }
+
+  .card-image {
+    transition: none;
+  }
+
+  .category-card:hover .card-image {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  .main-content {
+    max-width: none;
+    padding: 0;
+  }
+
+  .card-button {
+    display: none;
+  }
+
+  .category-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .page-title {
+    color: #000;
+  }
+
+  .page-description {
+    color: #000;
+  }
+}
+
+/* ==========================================================================
+   Performance Optimizations
+   ========================================================================== */
+
+/* GPU acceleration for smooth animations */
+.category-card,
+.card-button,
+.card-image {
+  will-change: transform;
+}
+
+/* Optimize repaints */
+.card-image {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ==========================================================================
+   Image Display
+   ========================================================================== */
+
+.card-image {
+  opacity: 1;
+  transition: opacity var(--transition-normal);
+}
