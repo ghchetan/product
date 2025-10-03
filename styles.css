@@ -10,6 +10,7 @@
   /* Colors */
   --primary-color: rgba(7, 86, 151, 1);
   --secondary-color: #1d4ed8;
+  --link-color: #00a8e4;
   --text-color: #1f2937;
   --text-light: #6b7280;
   --background-color: #ffffff;
@@ -559,33 +560,36 @@ body {
   right: 24px;
   width: 48px;
   height: 48px;
-  background: var(--primary-color);
-  color: var(--background-color);
-  border: none;
-  border-radius: 50%;
+
+  color: var(--primary-color);
+
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
   transition: var(--transition);
   z-index: 1000;
   text-decoration: none;
 }
 
-.scroll-to-top:hover,
-.scroll-to-top:focus {
-  background: var(--background-color);
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+.scroll-to-top .material-symbols-outlined {
+  font-size: 36px;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  line-height: 1;
+  color: var(--link-color);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   outline: none;
+  transition: var(--transition);
 }
 
-.scroll-to-top .material-symbols-outlined {
-  font-size: 24px;
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+.scroll-to-top:hover .material-symbols-outlined,
+.scroll-to-top:focus .material-symbols-outlined {
+  background-color: var(--link-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+  border-radius: 100%;
+  outline: none;
 }
 
 /* ==========================================================================
