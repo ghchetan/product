@@ -256,7 +256,7 @@ body {
 }
 
 .page-description {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   font-weight: 500;
   color: #333333;
   line-height: 22px;
