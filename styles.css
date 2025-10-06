@@ -243,7 +243,6 @@ body {
    Page Header
    ========================================================================== */
 .page-header {
-  margin-bottom: var(--spacing-12);
 }
 
 .page-title {
@@ -335,19 +334,10 @@ body {
 }
 
 .product-content {
-  padding: var(--spacing-6);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
-
-.product-content:first-child {
-  padding-bottom: var(--spacing-4);
-}
-
-.product-content:last-child {
-  padding-top: var(--spacing-4);
 }
 
 .product-title {
@@ -427,12 +417,6 @@ body {
     grid-template-rows: repeat(6, 1fr);
     gap: var(--spacing-4);
   }
-
-  /* .filtration-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    gap: var(--spacing-4);
-  } */
 }
 
 /* Tablet (768px and up) */
@@ -442,12 +426,6 @@ body {
     grid-template-rows: repeat(2, 1fr);
     gap: var(--spacing-6);
   }
-
-  /* .filtration-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    gap: var(--spacing-6);
-  } */
 }
 
 /* Desktop (1024px and up) */
@@ -566,12 +544,9 @@ body {
 /* ==========================================================================
    Filtration Page Styles
    ========================================================================== */
-/* .filtration-grid {
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  gap: var(--spacing-8);
-  margin-top: var(--spacing-8);
-} */
+.filtration-grid .product-card {
+  gap: 0px;
+}
 
 .product-content .details-button {
   background: var(--primary-color);
