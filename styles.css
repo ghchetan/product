@@ -10,7 +10,7 @@
   /* Colors */
   --primary-color: rgba(7, 86, 151, 1);
   --secondary-color: #1d4ed8;
-  --link-color: #00a8e4;
+  --link-color: rgba(153, 153, 153, 1);
   --text-color: #1f2937;
   --text-light: #6b7280;
   --background-color: #ffffff;
@@ -427,6 +427,12 @@ body {
     grid-template-rows: repeat(6, 1fr);
     gap: var(--spacing-4);
   }
+
+  /* .filtration-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--spacing-4);
+  } */
 }
 
 /* Tablet (768px and up) */
@@ -436,6 +442,12 @@ body {
     grid-template-rows: repeat(2, 1fr);
     gap: var(--spacing-6);
   }
+
+  /* .filtration-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: var(--spacing-6);
+  } */
 }
 
 /* Desktop (1024px and up) */
@@ -552,6 +564,66 @@ body {
 }
 
 /* ==========================================================================
+   Filtration Page Styles
+   ========================================================================== */
+/* .filtration-grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-8);
+} */
+
+.product-content .details-button {
+  background: var(--primary-color);
+  color: var(--background-color);
+  border: 1px solid var(--primary-color);
+  padding: 7px 32px;
+  border-radius: 21px;
+  font-weight: 400;
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: var(--spacing-3);
+}
+
+.product-content .details-button:hover,
+.product-content .details-button:focus {
+  background: var(--background-color);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+  outline: none;
+}
+
+.product-content .quick-view-link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  transition: var(--transition);
+}
+
+.product-content .quick-view-link:hover,
+.product-content .quick-view-link:focus {
+  color: var(--primary-color);
+  text-decoration: underline;
+  outline: none;
+}
+
+.product-content .quick-view-link .material-symbols-outlined {
+  font-size: 16px;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 16;
+}
+
+/* ==========================================================================
    Scroll to Top Button
    ========================================================================== */
 .scroll-to-top {
@@ -572,23 +644,26 @@ body {
   z-index: 1000;
   text-decoration: none;
 }
-
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 24px;
+  color: var(--link-color);
+}
 .scroll-to-top .material-symbols-outlined {
-  font-size: 36px;
+  font-size: 24px;
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
   line-height: 1;
   color: var(--link-color);
-  transform: translateY(-2px);
-  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: var(--transition);
 }
 
 .scroll-to-top:hover .material-symbols-outlined,
 .scroll-to-top:focus .material-symbols-outlined {
-  background-color: var(--link-color);
   color: #ffffff;
   transform: translateY(-2px);
-  border-radius: 100%;
   outline: 0;
 }
 
