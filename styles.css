@@ -623,6 +623,11 @@ body {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 16;
 }
 
+.product-content .quick-view-link .material-symbols-outlined:hover,
+.product-content .quick-view-link .material-symbols-outlined:focus {
+  color: var(--primary-color);
+}
+
 /* ==========================================================================
    Scroll to Top Button
    ========================================================================== */
