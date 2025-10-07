@@ -87,7 +87,14 @@
           aria-label="Filtration product categories"
         >
           <!-- Standard Baffle Card -->
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-product-name="Standard Baffle"
+            data-product-desc="The Standard Baffle is a direct drive, spun aluminum filtration system, designed for commercial kitchen exhaust applications. Units feature durable stainless steel construction with efficient grease capture capabilities."
+            data-product-specs='["50 to 14,500 cfm","Up to 2.75 in. wg.","Stainless steel construction"]'
+            data-product-certs='["High Wind & Hurricane","Seismic","UL/cUL 705","AMCA licensed for FEI & Air Performance","NSF certified","Energy Star compliant"]'
+            data-product-image="imgs/Exhuast Hoods.png"
+          >
             <div class="product-content">
               <h2 class="product-title">Standard Baffle</h2>
             </div>
@@ -108,9 +115,10 @@
                 Details
               </a>
               <a
-                href="/filtration/standard-baffle/quick-view"
+                href="#"
                 class="quick-view-link"
                 aria-label="Quick view Standard Baffle"
+                data-quick-view
               >
                 <span class="material-symbols-outlined">visibility</span>
                 Quick View
@@ -119,7 +127,14 @@
           </article>
 
           <!-- Grease X-Tractor Card -->
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-product-name="Grease X-Tractor™"
+            data-product-desc="The Grease X-Tractor™ features advanced filtration technology with multiple baffle designs for optimal grease capture and air quality in commercial kitchen environments. Engineered for maximum efficiency and durability."
+            data-product-specs='["25 to 8,000 cfm","Up to 1.5 in. wg.","Advanced baffle design"]'
+            data-product-certs='["High Wind & Hurricane","Seismic","UL/cUL 705","AMCA licensed for FEI & Air Performance","NSF certified","Grease extraction certified"]'
+            data-product-image="imgs/Filteration.png"
+          >
             <div class="product-content">
               <h2 class="product-title">Grease X-Tractor™</h2>
             </div>
@@ -140,9 +155,10 @@
                 Details
               </a>
               <a
-                href="/filtration/grease-x-tractor/quick-view"
+                href="#"
                 class="quick-view-link"
                 aria-label="Quick view Grease X-Tractor"
+                data-quick-view
               >
                 <span class="material-symbols-outlined">visibility</span>
                 Quick View
@@ -151,7 +167,14 @@
           </article>
 
           <!-- Grease Grabber Card -->
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-product-name="Grease Grabber™"
+            data-product-desc="The Grease Grabber™ is a professional utility distribution system providing efficient water, gas, and electrical connections for commercial kitchen operations. Features advanced grease removal technology with multiple processing units."
+            data-product-specs='["30 to 12,000 cfm","Up to 3.0 in. wg.","Multi-unit processing"]'
+            data-product-certs='["High Wind & Hurricane","Seismic","UL/cUL 705","AMCA licensed for FEI & Air Performance","NSF certified","Utility distribution certified","Industrial grade"]'
+            data-product-image="imgs/External Supply Plenums.png"
+          >
             <div class="product-content">
               <h2 class="product-title">Grease Grabber™</h2>
             </div>
@@ -172,9 +195,10 @@
                 Details
               </a>
               <a
-                href="/filtration/grease-grabber/quick-view"
+                href="#"
                 class="quick-view-link"
                 aria-label="Quick view Grease Grabber"
+                data-quick-view
               >
                 <span class="material-symbols-outlined">visibility</span>
                 Quick View
@@ -184,6 +208,75 @@
         </section>
       </div>
     </main>
+
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="quick-view-modal" aria-hidden="true">
+      <div class="quick-view-backdrop"></div>
+      <div class="quick-view-container">
+        <div class="quick-view-card">
+          <div class="quick-view-front">
+            <div class="quick-view-header">
+              <h2 id="quickViewTitle" class="quick-view-title"></h2>
+              <button class="quick-view-close" aria-label="Close quick view">
+                <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div class="quick-view-content">
+              <div class="quick-view-image-container">
+                <img id="quickViewImage" class="quick-view-image" alt="" />
+              </div>
+              <div class="quick-view-details">
+                <p id="quickViewDesc" class="quick-view-description"></p>
+                <div class="quick-view-specs">
+                  <h3>Specifications</h3>
+                  <ul id="quickViewSpecsList" class="quick-view-list"></ul>
+                </div>
+                <div class="quick-view-certs">
+                  <h3>Certifications</h3>
+                  <ul id="quickViewCertsList" class="quick-view-list"></ul>
+                </div>
+              </div>
+            </div>
+            <div class="quick-view-actions">
+              <button class="quick-view-flip-btn">
+                <span class="material-symbols-outlined">flip</span>
+                View Details
+              </button>
+            </div>
+          </div>
+          <div class="quick-view-back">
+            <div class="quick-view-header">
+              <h2 id="quickViewTitleBack" class="quick-view-title"></h2>
+              <button class="quick-view-close" aria-label="Close quick view">
+                <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div class="quick-view-content">
+              <div class="quick-view-image-container">
+                <img id="quickViewImageBack" class="quick-view-image" alt="" />
+              </div>
+              <div class="quick-view-details">
+                <p id="quickViewDescBack" class="quick-view-description"></p>
+                <div class="quick-view-specs">
+                  <h3>Specifications</h3>
+                  <ul id="quickViewSpecsListBack" class="quick-view-list"></ul>
+                </div>
+                <div class="quick-view-certs">
+                  <h3>Certifications</h3>
+                  <ul id="quickViewCertsListBack" class="quick-view-list"></ul>
+                </div>
+              </div>
+            </div>
+            <div class="quick-view-actions">
+              <button class="quick-view-flip-btn">
+                <span class="material-symbols-outlined">flip</span>
+                Back to Overview
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Scroll to Top Button -->
     <a href="#top" class="scroll-to-top" aria-label="Scroll to top">
@@ -200,19 +293,123 @@
           img.setAttribute("loading", "lazy");
         });
 
-        // Smooth scrolling for anchor links
-        const anchorLinks = document.querySelectorAll('a[href^="#"]');
-        anchorLinks.forEach((link) => {
+        // Quick View Modal Functionality
+        const quickViewModal = document.getElementById("quickViewModal");
+        const quickViewCard = document.querySelector(".quick-view-card");
+        const closeButtons = document.querySelectorAll(".quick-view-close");
+        const flipButtons = document.querySelectorAll(".quick-view-flip-btn");
+        const quickViewLinks = document.querySelectorAll("[data-quick-view]");
+
+        // Open Quick View Modal
+        function openQuickView(productCard) {
+          const productName = productCard.dataset.productName;
+          const productDesc = productCard.dataset.productDesc;
+          const productSpecs = JSON.parse(
+            productCard.dataset.productSpecs || "[]"
+          );
+          const productCerts = JSON.parse(
+            productCard.dataset.productCerts || "[]"
+          );
+          const productImage = productCard.dataset.productImage;
+
+          // Populate front side
+          document.getElementById("quickViewTitle").textContent = productName;
+          document.getElementById("quickViewDesc").textContent = productDesc;
+          document.getElementById("quickViewImage").src = productImage;
+          document.getElementById("quickViewImage").alt = productName;
+
+          // Populate back side
+          document.getElementById("quickViewTitleBack").textContent =
+            productName;
+          document.getElementById("quickViewDescBack").textContent =
+            productDesc;
+          document.getElementById("quickViewImageBack").src = productImage;
+          document.getElementById("quickViewImageBack").alt = productName;
+
+          // Populate specs lists
+          const specsList = document.getElementById("quickViewSpecsList");
+          const specsListBack = document.getElementById(
+            "quickViewSpecsListBack"
+          );
+          specsList.innerHTML = "";
+          specsListBack.innerHTML = "";
+          productSpecs.forEach((spec) => {
+            const li = document.createElement("li");
+            li.textContent = spec;
+            specsList.appendChild(li);
+            specsListBack.appendChild(li.cloneNode(true));
+          });
+
+          // Populate certs lists
+          const certsList = document.getElementById("quickViewCertsList");
+          const certsListBack = document.getElementById(
+            "quickViewCertsListBack"
+          );
+          certsList.innerHTML = "";
+          certsListBack.innerHTML = "";
+          productCerts.forEach((cert) => {
+            const li = document.createElement("li");
+            li.textContent = cert;
+            certsList.appendChild(li);
+            certsListBack.appendChild(li.cloneNode(true));
+          });
+
+          // Reset flip state
+          quickViewCard.classList.remove("flipped");
+
+          // Show modal
+          quickViewModal.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+
+        // Close Quick View Modal
+        function closeQuickView() {
+          quickViewModal.classList.remove("active");
+          document.body.style.overflow = "";
+          // Reset flip state
+          quickViewCard.classList.remove("flipped");
+        }
+
+        // Toggle flip animation
+        function toggleFlip() {
+          quickViewCard.classList.toggle("flipped");
+        }
+
+        // Event Listeners
+        quickViewLinks.forEach((link) => {
           link.addEventListener("click", function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-              target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }
+            const productCard = this.closest(".product-card");
+            openQuickView(productCard);
           });
+        });
+
+        closeButtons.forEach((button) => {
+          button.addEventListener("click", closeQuickView);
+        });
+
+        flipButtons.forEach((button) => {
+          button.addEventListener("click", toggleFlip);
+        });
+
+        // Close modal when clicking backdrop
+        quickViewModal.addEventListener("click", function (e) {
+          if (
+            e.target === quickViewModal ||
+            e.target.classList.contains("quick-view-backdrop")
+          ) {
+            closeQuickView();
+          }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener("keydown", function (e) {
+          if (
+            e.key === "Escape" &&
+            quickViewModal.classList.contains("active")
+          ) {
+            closeQuickView();
+          }
         });
       });
     </script>

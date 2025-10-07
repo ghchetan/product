@@ -660,3 +660,257 @@ body {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
+
+/* ==========================================================================
+   Quick View Modal Styles
+   ========================================================================== */
+.quick-view-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.quick-view-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quick-view-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.quick-view-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  perspective: 1000px;
+}
+
+.quick-view-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.quick-view-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.quick-view-front,
+.quick-view-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.quick-view-back {
+  transform: rotateY(180deg);
+}
+
+.quick-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.quick-view-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.quick-view-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+.quick-view-close:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.quick-view-close .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.quick-view-content {
+  flex: 1;
+  display: flex;
+  padding: 24px;
+  gap: 24px;
+  overflow-y: auto;
+}
+
+.quick-view-image-container {
+  flex: 0 0 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.quick-view-image {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.quick-view-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quick-view-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+}
+
+.quick-view-specs,
+.quick-view-certs {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.quick-view-specs h3,
+.quick-view-certs h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+}
+
+.quick-view-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick-view-list li {
+  padding: 6px 0;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.quick-view-list li:last-child {
+  border-bottom: none;
+}
+
+.quick-view-list li::before {
+  content: "•";
+  color: #3b82f6;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.quick-view-actions {
+  padding: 20px 24px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.quick-view-flip-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0 auto;
+}
+
+.quick-view-flip-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.quick-view-flip-btn .material-symbols-outlined {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.quick-view-card.flipped .quick-view-flip-btn .material-symbols-outlined {
+  transform: rotateY(180deg);
+}
+
+/* Responsive Design for Quick View */
+@media (max-width: 768px) {
+  .quick-view-container {
+    width: 95%;
+    max-height: 95vh;
+  }
+
+  .quick-view-content {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .quick-view-image-container {
+    flex: none;
+    height: 200px;
+  }
+
+  .quick-view-image {
+    max-height: 160px;
+  }
+
+  .quick-view-header {
+    padding: 16px 20px;
+  }
+
+  .quick-view-title {
+    font-size: 1.25rem;
+  }
+
+  .quick-view-actions {
+    padding: 16px 20px;
+  }
+}
