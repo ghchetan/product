@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Browse our comprehensive collection of industrial ventilation products including exhaust hoods, filtration systems, supply plenums, fire suppression, pollution control, and utility distribution solutions.">
+    <meta name="keywords" content="exhaust hoods, filtration systems, fire suppression, pollution control, utility distribution, industrial ventilation">
+    <meta name="author" content="Your Company Name">
+    <meta name="theme-color" content="#075697">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Industrial Ventilation Products">
+    <meta property="og:description" content="Professional ventilation and air quality solutions for industrial applications">
+    <meta property="og:image" content="./imgs/prd-1.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Industrial Ventilation Products">
+    <meta name="twitter:description" content="Professional ventilation and air quality solutions for industrial applications">
+
+    <title>Industrial Ventilation Products | Professional Solutions</title>
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="./fonts/Helvetica-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="./fonts/HelveticaNeueMedium.otf" as="font" type="font/otf" crossorigin>
+
+    <style>
+        /* Critical CSS - Inlined for performance */
+
+        /* Optimized font loading - only used fonts */
+        @font-face {
+            font-family: "Helvetica-Bold";
+            src: url("./fonts/Helvetica-Bold.ttf") format("truetype");
+            font-display: swap;
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: "HelveticaNeue-Medium";
+            src: url("./fonts/HelveticaNeueMedium.otf") format("opentype");
+            font-display: swap;
+            font-weight: 500;
+        }
+
+        /* CSS Reset */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Root variables for maintainability */
+        :root {
+            --primary-color: #075697;
+            --primary-hover: rgba(7, 86, 151, 0.9);
+            --text-primary: #333;
+            --text-secondary: #999;
+            --border-color: #e5e5e5;
+            --white: #fff;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --transition-fast: 0.2s ease;
+            --border-radius-sm: 4px;
+            --border-radius-pill: 21px;
+            --spacing-sm: 6px;
+            --spacing-md: 15px;
+            --spacing-lg: 30px;
+            --spacing-xl: 32px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background-color: #fafafa;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-family: 'Helvetica-Bold', -apple-system, sans-serif;
+            font-size: clamp(24px, 5vw, 32px);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 288px));
+            gap: var(--spacing-xl);
+            justify-content: center;
+            list-style: none;
+        }
+
+        .product-cards li {
+            position: relative;
+        }
+
+        .product-card {
+            width: 100%;
+            max-width: 288px;
+            height: 354px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            background-color: var(--white);
+            position: relative;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow var(--transition-fast);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card:focus-within {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        .product-category {
+            width: 100%;
+            height: 33px;
+            color: var(--text-primary);
+            font-family: 'Helvetica-Bold', -apple-system, sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .product-image-container {
+            height: 100%;
+            max-height: 194px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .product-details-btn {
+            width: 118px;
+            height: 42px;
+            border-radius: var(--border-radius-pill);
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-family: 'HelveticaNeue-Medium', -apple-system, sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 17px;
+            transition: background-color var(--transition-fast), transform var(--transition-fast);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .product-details-btn:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.02);
+        }
+
+        .product-details-btn:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        .product-details-btn:active {
+            transform: scale(0.98);
+        }
+
+        .is-flipped .quick-view-link {
+            color: var(--primary-color);
+        }
+
+        .quick-view-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            height: 23px;
+            color: var(--text-secondary);
+            font-family: 'HelveticaNeue-Medium', -apple-system, sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .quick-view-link:hover,
+        .quick-view-link:focus {
+            color: var(--primary-color);
+        }
+
+        .quick-view-link:hover svg,
+        .quick-view-link:focus svg {
+            fill: var(--primary-color);
+        }
+
+        .quick-view-link:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        .quick-view-link:hover .quick-view-icon path {
+            fill: var(--primary-color);
+        }
+
+        .quick-view-icon {
+            flex-shrink: 0;
+            transition: fill var(--transition-fast);
+        }
+
+        .quick-view-icon path {
+            transition: fill var(--transition-fast);
+        }
+
+        .visibility-off {
+            width: 15px;
+            height: 14px;
+        }
+
+        .visibility-on {
+            width: 15px;
+            height: 10px;
+            margin-bottom: 2px;
+            fill: var(--text-secondary);
+        }
+
+        /* Show visibility by default, hide visibility-off */
+        .quick-view-icon.visibility-off {
+            display: none;
+        }
+
+        .quick-view-icon.visibility-on {
+            display: inline-block;
+        }
+
+        /* When flipped: hide visibility, show visibility-off */
+        .product-card.is-flipped .quick-view-icon.visibility-off {
+            display: inline-block;
+        }
+
+        .product-card.is-flipped .quick-view-icon.visibility-on {
+            display: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            main {
+                padding: 24px 16px;
+            }
+
+            .product-cards {
+                gap: 20px;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            }
+
+            .product-card {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .product-cards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Front side (default view) */
+        .product-card-front {
+            width: 100%;
+            height: 100%;
+            padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Back side (product overview) */
+        .product-card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 308px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 3px;
+            padding: 23px 16px 0 16px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: hidden;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .product-card.is-flipped .product-card-back {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #999;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            z-index: 10;
+        }
+
+        .close-btn:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .product-overview-description {
+            font-family: 'HelveticaNeue-Medium', -apple-system, sans-serif;
+            font-size: 12px;
+            line-height: 17px;
+            color: #333333;
+            margin-bottom: 12px;
+        }
+
+        .product-overview-specs {
+            font-family: 'HelveticaNeue-Medium', -apple-system, sans-serif;
+            font-size: 12px;
+            line-height: 17px;
+            color: #333333;
+            margin-bottom: 12px;
+            list-style: none;
+            padding: 0;
+            margin: 5px 0 12px 0;
+        }
+
+        .product-overview-specs li {
+            margin-bottom: 3px;
+        }
+
+        .product-overview-certifications {
+            font-family: 'HelveticaNeue-Medium', -apple-system, sans-serif;
+            font-size: 12px;
+            line-height: 17px;
+            color: #333333;
+            margin-bottom: 0;
+        }
+
+        .product-overview-certifications h4 {
+            font-family: 'Helvetica-Bold', -apple-system, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            color: #333333;
+        }
+
+        .product-overview-certifications ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .product-overview-certifications li {
+            margin-bottom: 3px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .product-overview-certifications li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333333;
+        }
+
+        /* Mobile adjustments for flip cards */
+        @media (max-width: 768px) {
+            .product-card {
+                height: 320px;
+            }
+
+            .product-card-back {
+                padding: 16px 12px 16px 12px;
+            }
+
+            .product-overview-description,
+            .product-overview-specs,
+            .product-overview-certifications {
+                font-size: 11px;
+                line-height: 16px;
+            }
+        }
+    </style>
+
+    <!-- Schema.org structured data for products -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Industrial Ventilation Products",
+      "description": "Comprehensive collection of industrial ventilation and air quality solutions",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "Exhaust Hoods",
+            "description": "Professional exhaust hood systems for industrial ventilation",
+            "image": "./imgs/prd-1.png",
+            "category": "Industrial Ventilation",
+            "brand": {
+              "@type": "Brand",
+              "name": "Your Company Name"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Filtration Systems",
+            "description": "Advanced filtration solutions for air quality management",
+            "image": "./imgs/Filteration.png",
+            "category": "Air Filtration",
+            "brand": {
+              "@type": "Brand",
+              "name": "Your Company Name"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "External Supply Plenums",
+            "description": "External supply plenum systems for optimal air distribution",
+            "image": "./imgs/External Supply Plenums.png",
+            "category": "Air Distribution",
+            "brand": {
+              "@type": "Brand",
+              "name": "Your Company Name"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Product",
+            "name": "Fire Suppression Systems",
+            "description": "Comprehensive fire suppression solutions for industrial safety",
+            "image": "./imgs/Fire Supression.png",
+            "category": "Safety Systems",
+            "brand": {
+              "@type": "Brand",
+              "name": "Your Company Name"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Product",
+            "name": "Pollution Control",
+            "description": "Advanced pollution control systems for environmental compliance",
+            "image": "./imgs/Pollution Control.png",
+            "category": "Environmental Control",
+            "brand": {
+              "@type": "Brand",
+              "name": "Your Company Name"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Product",
+            "name": "Utility Distribution",
+            "description": "Efficient utility distribution systems for industrial facilities",
+            "image": "./imgs/Utility Distribution.png",
+            "category": "Utility Systems",
+            "brand": {
+              "@type": "Brand",
+              "name": "Your Company Name"
+            }
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <main id="main-content">
+        <h1 class="sr-only">Industrial Ventilation Products</h1>
+        <ul class="product-cards" role="list">
+            <li>
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <!-- Front side -->
+                    <div class="product-card-front">
+                        <h3 class="product-category" itemprop="category">Exhaust Hoods</h3>
+                        <div class="product-image-container">
+                            <img src="./imgs/prd-1.png" alt="Professional exhaust hood system for industrial ventilation" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                        </div>
+                        <meta itemprop="name" content="Exhaust Hoods">
+                        <meta itemprop="description" content="Professional exhaust hood systems for industrial ventilation">
+                        <button class="product-details-btn" aria-label="View details for Exhaust Hoods">Details</button>
+                        <a href="#exhaust-hoods" class="quick-view-link" aria-label="Quick view of Exhaust Hoods">
+                            <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                                <path fill="#075697"
+                                    d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                            </svg>
+                            <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                                <path
+                                    d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                            </svg>
+                            <span>Quick View</span>
+                        </a>
+                    </div>
+                    <!-- Back side (product overview) -->
+                    <div class="product-card-back">
+                        <p class="product-overview-description">
+                            The model G is a direct drive, spun aluminum fan, designed for roof mounting on a curb for general, clean air exhaust applications. Units feature a spun aluminum housing.
+                        </p>
+                        <ul class="product-overview-specs">
+                            <li>50 to 14,500 cfm</li>
+                            <li>Up to 2.75 in. wg.</li>
+                        </ul>
+                        <div class="product-overview-certifications">
+                            <h4>Certifications:</h4>
+                            <ul>
+                                <li>High Wind & Hurricane</li>
+                                <li>Seismic</li>
+                                <li>UL/cUL 705</li>
+                                <li>AMCA licensed for FEI & Air Performance</li>
+                                <li>Additional Bullet</li>
+                                <li>Additional Bullet</li>
+                                <li>Additional Bullet</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </li>
+
+            <li>
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <!-- Front side -->
+                    <div class="product-card-front">
+                        <h3 class="product-category" itemprop="category">Filtration</h3>
+                        <div class="product-image-container">
+                            <img src="./imgs/Filteration.png" alt="Advanced filtration system for air quality management" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                        </div>
+                        <meta itemprop="name" content="Filtration Systems">
+                        <meta itemprop="description" content="Advanced filtration solutions for air quality management">
+                        <button class="product-details-btn" aria-label="View details for Filtration Systems">Details</button>
+                        <a href="#filtration" class="quick-view-link" aria-label="Quick view of Filtration Systems">
+                            <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                                <path fill="#075697"
+                                    d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                            </svg>
+                            <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                                <path
+                                    d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                            </svg>
+                            <span>Quick View</span>
+                        </a>
+                    </div>
+                    <!-- Back side (product overview) -->
+                    <div class="product-card-back">
+                        <p class="product-overview-description">
+                            Advanced filtration systems designed for optimal air quality management in industrial environments. Features high-efficiency filters and modular design for easy maintenance.
+                        </p>
+                        <ul class="product-overview-specs">
+                            <li>MERV 8-16 filtration levels</li>
+                            <li>Up to 95% particle removal efficiency</li>
+                        </ul>
+                        <div class="product-overview-certifications">
+                            <h4>Certifications:</h4>
+                            <ul>
+                                <li>ASHRAE 52.2 certified</li>
+                                <li>ISO 16890 compliant</li>
+                                <li>UL listed components</li>
+                                <li>Energy Star qualified</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </li>
+
+            <li>
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <!-- Front side -->
+                    <div class="product-card-front">
+                        <h3 class="product-category" itemprop="category">Supply Plenums</h3>
+                        <div class="product-image-container">
+                            <img src="./imgs/External Supply Plenums.png" alt="External supply plenum system for optimal air distribution" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                        </div>
+                        <meta itemprop="name" content="External Supply Plenums">
+                        <meta itemprop="description" content="External supply plenum systems for optimal air distribution">
+                        <button class="product-details-btn" aria-label="View details for External Supply Plenums">Details</button>
+                        <a href="#supply-plenums" class="quick-view-link" aria-label="Quick view of External Supply Plenums">
+                            <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                                <path fill="var(--primary-color)"
+                                    d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                            </svg>
+                            <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                                <path
+                                    d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                            </svg>
+                            <span>Quick View</span>
+                        </a>
+                    </div>
+                    <!-- Back side (product overview) -->
+                    <div class="product-card-back">
+                        <p class="product-overview-description">
+                            External supply plenum systems engineered for optimal air distribution throughout industrial facilities. Features corrosion-resistant materials and precision-engineered airflow patterns.
+                        </p>
+                        <ul class="product-overview-specs">
+                            <li>Custom sizing available</li>
+                            <li>Pressure ratings up to 10 in. wg.</li>
+                        </ul>
+                        <div class="product-overview-certifications">
+                            <h4>Certifications:</h4>
+                            <ul>
+                                <li>SMACNA construction standards</li>
+                                <li>ASTM material specifications</li>
+                                <li>LEED compliant options</li>
+                                <li>Fire-rated assemblies available</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </li>
+
+            <li>
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <!-- Front side -->
+                    <div class="product-card-front">
+                        <h3 class="product-category" itemprop="category">Fire Suppression</h3>
+                        <div class="product-image-container">
+                            <img src="./imgs/Fire Supression.png" alt="Comprehensive fire suppression system for industrial safety" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                        </div>
+                        <meta itemprop="name" content="Fire Suppression Systems">
+                        <meta itemprop="description" content="Comprehensive fire suppression solutions for industrial safety">
+                        <button class="product-details-btn" aria-label="View details for Fire Suppression Systems">Details</button>
+                        <a href="#fire-suppression" class="quick-view-link" aria-label="Quick view of Fire Suppression Systems">
+                            <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                                <path fill="var(--primary-color)"
+                                    d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                            </svg>
+                            <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                                <path
+                                    d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                            </svg>
+                            <span>Quick View</span>
+                        </a>
+                    </div>
+                    <!-- Back side (product overview) -->
+                    <div class="product-card-back">
+                        <p class="product-overview-description">
+                            Comprehensive fire suppression solutions designed for industrial safety. Features advanced detection systems and rapid response capabilities to protect critical infrastructure.
+                        </p>
+                        <ul class="product-overview-specs">
+                            <li>NFPA 72 compliant detection</li>
+                            <li>Response time under 60 seconds</li>
+                        </ul>
+                        <div class="product-overview-certifications">
+                            <h4>Certifications:</h4>
+                            <ul>
+                                <li>NFPA 72 certified</li>
+                                <li>UL listed fire suppression</li>
+                                <li>FM approved systems</li>
+                                <li>Local authority approval</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </li>
+
+            <li>
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <!-- Front side -->
+                    <div class="product-card-front">
+                        <h3 class="product-category" itemprop="category">Pollution Control</h3>
+                        <div class="product-image-container">
+                            <img src="./imgs/Pollution Control.png" alt="Advanced pollution control system for environmental compliance" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                        </div>
+                        <meta itemprop="name" content="Pollution Control">
+                        <meta itemprop="description" content="Advanced pollution control systems for environmental compliance">
+                        <button class="product-details-btn" aria-label="View details for Pollution Control">Details</button>
+                        <a href="#pollution-control" class="quick-view-link" aria-label="Quick view of Pollution Control">
+                            <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                                <path fill="#075697"
+                                    d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                            </svg>
+                            <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                                <path
+                                    d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                            </svg>
+                            <span>Quick View</span>
+                        </a>
+                    </div>
+                    <!-- Back side (product overview) -->
+                    <div class="product-card-back">
+                        <p class="product-overview-description">
+                            Advanced pollution control systems for environmental compliance. Engineered to meet strict emissions standards while maintaining operational efficiency.
+                        </p>
+                        <ul class="product-overview-specs">
+                            <li>99.9% particulate removal</li>
+                            <li>EPA compliance guaranteed</li>
+                        </ul>
+                        <div class="product-overview-certifications">
+                            <h4>Certifications:</h4>
+                            <ul>
+                                <li>EPA certified technology</li>
+                                <li>ISO 14001 environmental</li>
+                                <li>CARB compliant</li>
+                                <li>CE marked components</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </li>
+
+            <li>
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <!-- Front side -->
+                    <div class="product-card-front">
+                        <h3 class="product-category" itemprop="category">Utility Distribution</h3>
+                        <div class="product-image-container">
+                            <img src="./imgs/Utility Distribution.png" alt="Efficient utility distribution system for industrial facilities" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                        </div>
+                        <meta itemprop="name" content="Utility Distribution">
+                        <meta itemprop="description" content="Efficient utility distribution systems for industrial facilities">
+                        <button class="product-details-btn" aria-label="View details for Utility Distribution">Details</button>
+                        <a href="#utility-distribution" class="quick-view-link" aria-label="Quick view of Utility Distribution">
+                            <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                                <path fill="var(--primary-color)"
+                                    d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                            </svg>
+                            <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                                <path
+                                    d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                            </svg>
+                            <span>Quick View</span>
+                        </a>
+                    </div>
+                    <!-- Back side (product overview) -->
+                    <div class="product-card-back">
+                        <p class="product-overview-description">
+                            Efficient utility distribution systems for industrial facilities. Designed for reliable delivery of utilities with minimal energy loss and maximum operational flexibility.
+                        </p>
+                        <ul class="product-overview-specs">
+                            <li>Modular design architecture</li>
+                            <li>99.9% uptime reliability</li>
+                        </ul>
+                        <div class="product-overview-certifications">
+                            <h4>Certifications:</h4>
+                            <ul>
+                                <li>IEEE electrical standards</li>
+                                <li>ASME pressure vessel code</li>
+                                <li>NEC compliant installation</li>
+                                <li>Energy efficiency certified</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    </main>
+
+
+    <script>
+        // Simple toggle functionality - content is already in HTML
+        document.addEventListener('DOMContentLoaded', function () {
+            // Quick view links - toggle card flip to show product overview
+            document.querySelectorAll('.quick-view-link').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const card = this.closest('.product-card');
+                    card.classList.toggle('is-flipped');
+                });
+            });
+
+            // Click on product overview (back side) to close and return to card front
+            document.querySelectorAll('.product-card-back').forEach(backSide => {
+                backSide.addEventListener('click', function (e) {
+                    const card = this.closest('.product-card');
+                    card.classList.remove('is-flipped');
+                });
+            });
+
+            // ESC key to close any flipped card
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.product-card.is-flipped').forEach(card => {
+                        card.classList.remove('is-flipped');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,588 @@
+# Product Card Component - Cursor Rules
+
+## Project Context
+This is a product card component for an internal code competition, optimized for Lighthouse 100% scores across all categories (Performance, Accessibility, Best Practices, SEO).
+
+## Core Requirements
+- Lighthouse score: 100% in all categories (Performance, Accessibility, Best Practices, SEO)
+- Semantic HTML5 with proper structure
+- Schema.org compliance for rich snippets
+- SEO-friendly with complete meta tags
+- Lightweight and performant (minimal HTTP requests)
+- Mobile-first responsive design
+- WCAG 2.1 AA accessibility compliance
+
+## HTML Standards
+
+### Semantic Structure
+- Use semantic HTML5 elements: `<main>`, `<article>`, `<section>`, `<nav>`, etc.
+- Always include one `<h1>` per page (can be visually hidden with `.sr-only`)
+- Follow proper heading hierarchy: h1 → h2 → h3 → h4 (no skipping levels)
+- Use `<article>` for self-contained, syndicated content (product cards)
+- Use `<section>` for thematic groupings (not generic wrappers)
+- Use `<p>` for paragraphs of text (not `<div>`)
+- Use `<ul>` or `<ol>` directly without wrapper divs when possible
+- Use `<button>` for actions, `<a>` for navigation
+
+### Element Selection Guide
+```
+Text paragraph        → <p>
+List of items         → <ul> or <ol>
+Heading              → <h1> to <h6>
+Navigation           → <nav>
+Action/interaction   → <button>
+Link/navigation      → <a>
+Self-contained item  → <article>
+Thematic grouping    → <section>
+Generic container    → <div> (only when needed)
+Inline styling       → <span> (last resort)
+```
+
+### Minimize Divs
+- Avoid unnecessary wrapper divs (divitis)
+- Apply classes directly to semantic elements when possible
+- Only use `<div>` when grouping multiple elements or for layout
+
+### Accessibility
+- All images must have descriptive `alt` text
+- All interactive elements must have `aria-label` when text is not visible
+- Include skip link for keyboard navigation: `<a href="#main-content" class="skip-link">Skip to main content</a>`
+- Use `aria-hidden="true"` on decorative icons
+- Ensure proper focus indicators
+- Support keyboard navigation (ESC key, Enter, Space)
+- Include `width` and `height` on images to prevent layout shift
+
+### Schema.org
+- Include JSON-LD structured data in `<head>`
+- Use microdata attributes: `itemscope`, `itemtype`, `itemprop`
+- Implement both JSON-LD and microdata for better compatibility
+- Use appropriate types: `Product`, `ItemList`, `Organization`
+
+### Performance
+- Inline critical CSS in `<style>` tag
+- Use `loading="lazy"` on images
+- Preload critical fonts
+- Use `font-display: swap` for custom fonts
+- Include width/height on images
+- Minimize HTTP requests (inline SVGs, inline CSS)
+- No external dependencies (no CDN links)
+
+## CSS Standards
+
+### Class Naming Convention
+Use **kebab-case** with clear, descriptive names following this pattern:
+
+```css
+/* Component/Block */
+.product-card
+.quick-view-link
+
+/* Component Element (Component-Element) */
+.product-card-front
+.product-card-back
+.product-category
+.product-image-container
+.product-image
+.product-details-btn
+
+/* Sub-Component Element (Component-Subcomponent-Element) */
+.product-overview-description
+.product-overview-specs
+.product-overview-certifications
+
+/* Icon Variants */
+.visibility-on
+.visibility-off
+
+/* State Classes (is- prefix) */
+.is-flipped
+.is-active
+.is-hidden
+
+/* Utility Classes (functional) */
+.sr-only
+.skip-link
+```
+
+### Naming Rules
+- Use **kebab-case** (lowercase with hyphens)
+- Use **descriptive names** that explain purpose, not presentation
+- Use **is-** prefix for state classes (`.is-flipped`, `.is-active`)
+- Use **has-** prefix for conditional states (`.has-error`, `.has-icon`)
+- Group related classes with common prefixes (`.product-*`, `.quick-view-*`)
+- Avoid presentational names (`.red-text`, `.big-font`, `.mt-10`)
+- Avoid abbreviations (`.btn` is OK, `.prd-crd` is not)
+
+### CSS Organization
+```css
+/* 1. CSS Reset */
+/* 2. CSS Variables (:root) */
+/* 3. Base styles (body, html) */
+/* 4. Utility classes (.sr-only, .skip-link) */
+/* 5. Layout components */
+/* 6. UI components */
+/* 7. State classes */
+/* 8. Media queries */
+```
+
+### CSS Best Practices
+- Use CSS variables for colors, spacing, transitions
+- Mobile-first media queries
+- Avoid `!important` unless absolutely necessary
+- Use `rem` for font sizes, `px` for borders
+- Group related properties together
+- Use shorthand properties when appropriate
+- Optimize for performance (avoid expensive properties like box-shadow on scroll)
+
+## JavaScript Standards
+
+### Code Style
+- Use `const` and `let`, never `var`
+- Use arrow functions for callbacks
+- Use template literals for strings
+- Use `addEventListener`, not inline handlers
+- Use descriptive variable names
+- Add comments for complex logic
+- Use `DOMContentLoaded` for initialization
+- Cache DOM queries when reused
+
+### Event Handling
+```javascript
+// ✅ GOOD - Clear and descriptive
+document.querySelectorAll('.quick-view-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const card = this.closest('.product-card');
+        card.classList.toggle('is-flipped');
+    });
+});
+
+// ❌ BAD - Unclear or verbose
+$('.quick-view-link').click(function() { ... });  // Don't use jQuery
+document.onclick = function() { ... };             // Don't use global handlers
+```
+
+### Code Organization
+- Keep JavaScript minimal (progressive enhancement)
+- Prefer CSS solutions over JavaScript when possible
+- Use vanilla JavaScript (no jQuery or external libraries)
+- Organize code logically: functions first, event listeners last
+- Use descriptive function names that explain what they do
+
+## SVG Guidelines
+
+### Optimization
+- Inline SVGs for performance (no external SVG files)
+- Remove unnecessary attributes (`xmlns`, hardcoded `fill`)
+- Use `viewBox` instead of width/height
+- Use `currentColor` or CSS variables for fills
+- Add `aria-hidden="true"` for decorative icons
+- Optimize with SVGOMG (multipass, remove metadata, etc.)
+
+### Structure
+```html
+<!-- ✅ GOOD - Optimized inline SVG -->
+<svg class="icon" aria-hidden="true" viewBox="0 0 15 10">
+    <path d="..." />
+</svg>
+
+<!-- ❌ BAD - External or unoptimized -->
+<img src="icon.svg" />
+<svg xmlns="http://www.w3.org/2000/svg" fill="#000" width="15" height="10">
+```
+
+## Performance Optimization
+
+### Critical
+- Inline all CSS (no external stylesheets)
+- Inline all JavaScript (no external scripts)
+- Inline all SVG icons (no external SVG files)
+- Preload critical fonts
+- Use `font-display: swap`
+- Add width/height to images
+- Use `loading="lazy"` on below-fold images
+- Minimize HTTP requests
+
+### Images
+- Optimize image file sizes
+- Use modern formats (WebP, AVIF) with fallbacks
+- Include width/height attributes
+- Use descriptive alt text
+- Lazy load below-fold images
+
+## Accessibility (WCAG 2.1 AA)
+
+### Required
+- All interactive elements must be keyboard accessible
+- All images must have alt text
+- Color contrast ratio minimum 4.5:1 for normal text
+- Focus indicators must be visible
+- Skip link for keyboard navigation
+- ARIA labels for icon-only buttons
+- Support ESC key to close overlays/modals
+- No keyboard traps
+
+### Testing Checklist
+- [ ] Tab through all interactive elements
+- [ ] ESC key closes overlays
+- [ ] All images have alt text
+- [ ] All buttons have accessible names
+- [ ] Color contrast passes WCAG AA
+- [ ] Focus indicators are visible
+- [ ] Screen reader announces content correctly
+
+## Component Architecture
+
+### Product Card Structure
+```html
+<article class="product-card">
+    <div class="product-card-front">
+        <h3 class="product-category">Title</h3>
+        <div class="product-image-container">
+            <img class="product-image" />
+        </div>
+        <button class="product-details-btn">Details</button>
+        <a class="quick-view-link">
+            <svg class="quick-view-icon visibility-off"></svg>
+            <svg class="quick-view-icon visibility-on"></svg>
+            <span>Quick View</span>
+        </a>
+    </div>
+    
+    <div class="product-card-back">
+        <p class="product-overview-description">...</p>
+        <ul class="product-overview-specs">...</ul>
+        <div class="product-overview-certifications">
+            <h4>Certifications:</h4>
+            <ul>...</ul>
+        </div>
+    </div>
+</article>
+```
+
+### Flip Functionality
+- Use simple `display: none/flex` toggle (no complex animations)
+- Toggle `.is-flipped` class on `.product-card`
+- Show `.visibility-on` icon by default
+- Show `.visibility-off` icon when `.is-flipped`
+- Allow toggle via: click Quick View link, click back side, ESC key
+
+## File Organization
+
+### Current Structure
+```
+/product/
+├── card.html                    # Main submission file
+├── test-server.js              # Local testing server
+├── imgs/                       # Product images
+├── fonts/                      # Custom fonts
+└── docs/                       # Documentation
+    ├── submission/             # Competition submission docs
+    ├── guides/                 # Technical guides
+    ├── reference/              # Quick reference
+    └── archive/                # Historical files
+```
+
+## Code Comments
+
+### When to Comment
+- Complex logic or algorithms
+- Accessibility features
+- Performance optimizations
+- Browser-specific hacks
+- Section headers for organization
+
+### Comment Style
+```css
+/* Section header */
+.class { }
+
+/* Complex logic explanation */
+.class {
+    property: value; /* Why this specific value */
+}
+```
+
+```javascript
+// Toggle card to show product overview
+function flipCard() { }
+
+// Close all flipped cards on ESC key
+document.addEventListener('keydown', function (e) { });
+```
+
+## Testing Requirements
+
+### Manual Testing
+- [ ] Test in Chrome, Firefox, Safari
+- [ ] Test on mobile, tablet, desktop
+- [ ] Run Lighthouse audit (aim for 100% all categories)
+- [ ] Test keyboard navigation
+- [ ] Test screen reader (VoiceOver/NVDA)
+- [ ] Test with JavaScript disabled (content should be visible)
+- [ ] Validate HTML (W3C validator)
+
+### Lighthouse Targets
+- Performance: 100
+- Accessibility: 100
+- Best Practices: 100
+- SEO: 100
+
+## Common Pitfalls to Avoid
+
+### HTML
+- ❌ Don't skip heading levels (h1 → h3)
+- ❌ Don't use divs for text paragraphs
+- ❌ Don't use multiple h1 tags
+- ❌ Don't use tables for layout
+- ❌ Don't use inline styles
+- ❌ Don't use presentational elements (`<b>`, `<i>`, use CSS)
+
+### CSS
+- ❌ Don't use presentational class names
+- ❌ Don't use IDs for styling
+- ❌ Don't use `!important` unless necessary
+- ❌ Don't use fixed pixel widths (use max-width)
+- ❌ Don't forget to remove unused CSS
+
+### JavaScript
+- ❌ Don't use jQuery or external libraries
+- ❌ Don't use inline event handlers
+- ❌ Don't manipulate DOM excessively
+- ❌ Don't use global variables
+- ❌ Don't forget `e.preventDefault()` on links
+
+### Performance
+- ❌ Don't use external CDNs (Material Icons, Google Fonts)
+- ❌ Don't load large images without optimization
+- ❌ Don't use render-blocking resources
+- ❌ Don't forget to compress/minify SVGs
+
+## Quick Reference
+
+### Current Class Names
+```css
+/* Main Components */
+.product-card
+.product-card-front
+.product-card-back
+
+/* Front Side Elements */
+.product-category
+.product-image-container
+.product-image
+.product-details-btn
+.quick-view-link
+.quick-view-icon
+
+/* Icon States */
+.visibility-on
+.visibility-off
+
+/* Back Side Elements (Product Overview) */
+.product-overview-description
+.product-overview-specs
+.product-overview-certifications
+
+/* State Classes */
+.is-flipped
+
+/* Utility Classes */
+.sr-only
+.skip-link
+.close-btn
+```
+
+### CSS Variables
+```css
+--primary-color: #075697
+--primary-hover: rgba(7, 86, 151, 0.9)
+--text-primary: #333
+--text-secondary: #999
+--border-color: #e5e5e5
+--white: #fff
+--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05)
+--transition-fast: 0.2s ease
+--border-radius-sm: 4px
+--border-radius-pill: 21px
+--spacing-sm: 6px
+--spacing-md: 15px
+--spacing-lg: 30px
+--spacing-xl: 32px
+```
+
+### Typography
+```css
+Font Family (Heading): 'Helvetica-Bold', -apple-system, sans-serif
+Font Family (Body): 'HelveticaNeue-Medium', -apple-system, sans-serif
+Font Size (Description/Specs): 12px
+Line Height: 17px (1.41667)
+Color: #333333
+```
+
+## Backend Integration
+
+### Product Data Structure
+All product data should be in static HTML (no data attributes needed):
+
+```html
+<article class="product-card">
+    <div class="product-card-front">
+        <h3 class="product-category">Product Name</h3>
+        <div class="product-image-container">
+            <img src="..." alt="..." width="228" height="194" loading="lazy">
+        </div>
+        <button class="product-details-btn">Details</button>
+        <a href="#product-id" class="quick-view-link">
+            <svg class="quick-view-icon visibility-off">...</svg>
+            <svg class="quick-view-icon visibility-on">...</svg>
+            <span>Quick View</span>
+        </a>
+    </div>
+    
+    <div class="product-card-back">
+        <p class="product-overview-description">Product description text...</p>
+        <ul class="product-overview-specs">
+            <li>Spec 1</li>
+            <li>Spec 2</li>
+        </ul>
+        <div class="product-overview-certifications">
+            <h4>Certifications:</h4>
+            <ul>
+                <li>Certification 1</li>
+                <li>Certification 2</li>
+            </ul>
+        </div>
+    </div>
+</article>
+```
+
+## Decision Making Framework
+
+### "Should I use a div or semantic element?"
+1. Is it a paragraph of text? → Use `<p>`
+2. Is it a list? → Use `<ul>` or `<ol>`
+3. Is it a heading? → Use `<h1>`-`<h6>`
+4. Is it self-contained content? → Use `<article>`
+5. Is it a thematic grouping? → Use `<section>`
+6. Only if none above: → Use `<div>`
+
+### "Should I add a wrapper div?"
+1. Can I apply the class directly to the element? → Do that
+2. Do I need to group multiple different elements? → Add wrapper
+3. Is it only for one element? → No wrapper needed
+
+### "What class name should I use?"
+1. What is this component? → `component-name`
+2. What element is this? → `component-element`
+3. What's its specific role? → `component-subcomponent-element`
+4. Is it a state? → `is-state-name`
+5. Is it a utility? → descriptive functional name
+
+### "div vs span?"
+- `<div>` → Block-level container (takes full width)
+- `<span>` → Inline container (wraps around content)
+
+## Code Quality Standards
+
+### Readability
+- Use consistent indentation (4 spaces)
+- Add blank lines between sections
+- Use descriptive variable/class names
+- Add comments for complex logic
+- Keep functions small and focused
+- Group related code together
+
+### Maintainability
+- Follow DRY (Don't Repeat Yourself)
+- Use CSS variables for repeated values
+- Create reusable patterns
+- Document complex features
+- Keep structure flat (avoid deep nesting)
+
+### Performance
+- Minimize DOM depth
+- Reduce number of elements
+- Use CSS for animations/transitions
+- Avoid JavaScript when CSS can do it
+- Cache DOM queries in variables
+
+## Competition Submission Checklist
+
+### Code Quality
+- [ ] HTML validates (W3C validator)
+- [ ] CSS is organized and commented
+- [ ] JavaScript is minimal and clean
+- [ ] No console errors
+- [ ] No linter warnings
+- [ ] Consistent formatting
+
+### Semantics
+- [ ] One h1 per page
+- [ ] Proper heading hierarchy
+- [ ] Semantic elements used correctly
+- [ ] Minimal div usage
+- [ ] No divitis
+
+### Accessibility
+- [ ] Keyboard navigation works
+- [ ] Focus indicators visible
+- [ ] ARIA labels present
+- [ ] Alt text on images
+- [ ] Color contrast passes
+- [ ] Screen reader tested
+
+### Performance
+- [ ] Lighthouse Performance: 100
+- [ ] No render-blocking resources
+- [ ] Images optimized
+- [ ] Fonts optimized
+- [ ] CSS/JS inlined
+- [ ] No external dependencies
+
+### SEO
+- [ ] Lighthouse SEO: 100
+- [ ] Meta tags complete
+- [ ] Schema.org implemented
+- [ ] Semantic HTML
+- [ ] Proper heading structure
+
+### Best Practices
+- [ ] Lighthouse Best Practices: 100
+- [ ] HTTPS ready
+- [ ] No console errors
+- [ ] Modern standards
+- [ ] Security best practices
+
+## Remember
+
+1. **Semantic First**: Always choose the most semantic element
+2. **Minimize Markup**: Remove unnecessary divs/wrappers
+3. **Clear Naming**: Class names should be self-documenting
+4. **Performance**: Every byte counts - inline, optimize, compress
+5. **Accessibility**: Not optional - it's required
+6. **Progressive Enhancement**: Works without JavaScript
+7. **Mobile First**: Design for mobile, enhance for desktop
+8. **Standards Compliance**: Follow W3C, WCAG, Schema.org
+
+## When in Doubt
+
+1. Check semantic HTML rules above
+2. Ask: "Is there a more semantic element?"
+3. Ask: "Do I really need this wrapper div?"
+4. Ask: "Is my class name self-documenting?"
+5. Ask: "Will this hurt performance or accessibility?"
+
+## Goals
+
+- 🎯 Lighthouse: 100/100/100/100
+- 🎯 Semantic Score: 10/10
+- 🎯 Class Naming: 10/10
+- 🎯 Accessibility: WCAG 2.1 AA
+- 🎯 File Size: Minimal
+- 🎯 Code Quality: Production-ready
+- 🎯 Developer Experience: Self-documenting
+
+---
+
+**These rules ensure consistent, high-quality, competition-winning code!** 🏆
