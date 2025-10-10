@@ -29,7 +29,7 @@ class FacetedSearch {
     this.initializeFilters();
     this.bindEvents();
     this.updateResults();
-    this.initializeQuickView();
+    
   }
 
   /**
@@ -145,25 +145,33 @@ class FacetedSearch {
       });
     });
 
-    // Quick view link events
-    document.querySelectorAll('.quick-view-link').forEach(link => {
+    // Quick view links - toggle card flip to show product overview
+    const quickViewLinks = document.querySelectorAll('.quick-view-link');
+    console.log('Found quick-view-link elements:', quickViewLinks.length);
+    
+    quickViewLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        this.showQuickView(e.target.closest('.product-card'));
+        const card = link.closest('.product-card');
+        console.log('Toggling is-flipped on card:', card);
+        card.classList.toggle('is-flipped');
       });
     });
 
-    // Click outside card to close quick view
-    document.addEventListener('click', (e) => {
-      if (this.currentFlippedCard && !e.target.closest('.product-card')) {
-        this.hideQuickView();
-      }
+    // Click on product overview (back side) to close and return to card front
+    document.querySelectorAll('.product-card-back').forEach(backSide => {
+      backSide.addEventListener('click', () => {
+        const card = backSide.closest('.product-card');
+        card.classList.remove('is-flipped');
+      });
     });
 
-    // ESC key to close popover
+    // ESC key to close any flipped card
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        this.hideQuickView();
+        document.querySelectorAll('.product-card.is-flipped').forEach(card => {
+          card.classList.remove('is-flipped');
+        });
       }
     });
 
@@ -455,18 +463,7 @@ class FacetedSearch {
   }
 
 
-  /**
-   * Hide quick view by flipping card back
-   */
-  hideQuickView() {
-    if (this.currentFlippedCard) {
-      const cardInner = this.currentFlippedCard.querySelector('.product-card-inner');
-      if (cardInner) {
-        cardInner.classList.remove('flipped');
-      }
-      this.currentFlippedCard = null;
-    }
-  }
+   
 }
 
 // Initialize when DOM is loaded

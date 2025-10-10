@@ -66,222 +66,337 @@
       </header>
 
       <!-- Product Cards Grid -->
-      <section class="products-grid filtration-grid" aria-label="Filtration product categories">
-        <!-- Standard Baffle Card -->
-        <article class="product-card" data-product-name="Standard Baffle"
-          data-product-desc="The Standard Baffle is a direct drive, spun aluminum filtration system, designed for commercial kitchen exhaust applications. Units feature durable stainless steel construction with efficient grease capture capabilities."
-          data-product-specs='["50 to 14,500 cfm","Up to 2.75 in. wg.","Stainless steel construction"]'
-          data-product-certs='["High Wind & Hurricane","Seismic","UL/cUL 705","AMCA licensed for FEI & Air Performance","NSF certified","Energy Star compliant"]' data-product-image="imgs/Exhuast Hoods.png">
-          <div class="product-content">
-            <h2 class="product-title">Standard Baffle</h2>
-          </div>
+      <!-- Product Grid -->
+      <section class="products-section" aria-label="Roof products">
+        <ul class="product-cards" role="list">
+          <li>
+            <article data-application="special-ventilation restaurant high-temp smoke-control" data-certifications="amca-air-sound ul-705 high-wind" data-impeller="centaxial-wheel" data-drive="belt-drive"
+              data-housing="spun-aluminum" data-discharge="downblast" class="product-card" itemscope itemtype="https://schema.org/Product">
+              <!-- Front side -->
+              <div class="product-card-front">
+                <h3 class="product-category" itemprop="category">Exhaust Hoods</h3>
+                <div class="product-image-container">
+                  <img src="./imgs/prd-1.png" alt="Professional exhaust hood system for industrial ventilation" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                </div>
+                <div class="product-card-footer">
+                  <meta itemprop="name" content="Exhaust Hoods">
+                  <meta itemprop="description" content="Professional exhaust hood systems for industrial ventilation">
+                  <button class="product-details-btn" aria-label="View details for Exhaust Hoods">Details</button>
+                  <a href="#exhaust-hoods" class="quick-view-link" aria-label="Quick view of Exhaust Hoods">
+                    <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                      <path
+                        d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                    </svg>
+                    <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                      <path
+                        d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                    </svg>
+                    <span>Quick View</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Back side (product overview) -->
+              <div class="product-card-back">
+                <p class="product-overview-description">
+                  The model G is a direct drive, spun aluminum fan, designed for roof mounting on a curb for general, clean air exhaust applications. Units feature a spun aluminum housing.
+                </p>
+                <ul class="product-overview-specs">
+                  <li>50 to 14,500 cfm</li>
+                  <li>Up to 2.75 in. wg.</li>
+                </ul>
+                <div class="product-overview-certifications">
+                  <h4>Certifications:</h4>
+                  <ul>
+                    <li>High Wind & Hurricane</li>
+                    <li>Seismic</li>
+                    <li>UL/cUL 705</li>
+                    <li>AMCA licensed for FEI & Air Performance</li>
+                    <li>Additional Bullet</li>
+                    <li>Additional Bullet</li>
+                    <li>Additional Bullet</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </li>
 
-          <div class="product-image">
-            <img src="imgs/Exhuast Hoods.png" alt="Standard baffle filtration system for commercial kitchen exhaust" loading="lazy" />
-          </div>
-          <div class="product-content">
-            <a href="/filtration/standard-baffle" class="details-button" aria-label="View Standard Baffle details">
-              Details
-            </a>
-            <a href="#" class="quick-view-link" aria-label="Quick view Standard Baffle" data-quick-view>
-              <span class="material-symbols-outlined">visibility</span>
-              Quick View
-            </a>
-          </div>
-        </article>
+          <li>
+            <article data-application="restaurant high-temp" data-certifications="ul-restaurant-exhaust ul-smoke-control" data-impeller="mixed-flow-wheel" data-drive="direct-drive" data-housing="fab-h-hood"
+              data-discharge="upblast" class="product-card" itemscope itemtype="https://schema.org/Product">
+              <!-- Front side -->
+              <div class="product-card-front">
+                <h3 class="product-category" itemprop="category">Filtration</h3>
+                <div class="product-image-container">
+                  <img src="./imgs/Filteration.png" alt="Advanced filtration system for air quality management" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                </div>
+                <div class="product-card-footer">
+                  <meta itemprop="name" content="Filtration Systems">
+                  <meta itemprop="description" content="Advanced filtration solutions for air quality management">
+                  <button class="product-details-btn" aria-label="View details for Filtration Systems">Details</button>
+                  <a href="#filtration" class="quick-view-link" aria-label="Quick view of Filtration Systems">
+                    <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                      <path
+                        d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                    </svg>
+                    <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                      <path
+                        d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                    </svg>
+                    <span>Quick View</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Back side (product overview) -->
+              <div class="product-card-back">
+                <p class="product-overview-description">
+                  Advanced filtration systems designed for optimal air quality management in industrial environments. Features high-efficiency filters and modular design for easy maintenance.
+                </p>
+                <ul class="product-overview-specs">
+                  <li>MERV 8-16 filtration levels</li>
+                  <li>Up to 95% particle removal efficiency</li>
+                </ul>
+                <div class="product-overview-certifications">
+                  <h4>Certifications:</h4>
+                  <ul>
+                    <li>ASHRAE 52.2 certified</li>
+                    <li>ISO 16890 compliant</li>
+                    <li>UL listed components</li>
+                    <li>Energy Star qualified</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </li>
 
-        <!-- Grease X-Tractor Card -->
-        <article class="product-card" data-product-name="Grease X-Tractor™"
-          data-product-desc="The Grease X-Tractor™ features advanced filtration technology with multiple baffle designs for optimal grease capture and air quality in commercial kitchen environments. Engineered for maximum efficiency and durability."
-          data-product-specs='["25 to 8,000 cfm","Up to 1.5 in. wg.","Advanced baffle design"]'
-          data-product-certs='["High Wind & Hurricane","Seismic","UL/cUL 705","AMCA licensed for FEI & Air Performance","NSF certified","Grease extraction certified"]' data-product-image="imgs/Filteration.png">
-          <div class="product-content">
-            <h2 class="product-title">Grease X-Tractor™</h2>
-          </div>
+          <li>
+            <article data-application="special-ventilation smoke-control" data-certifications="amca-feg-sound-air miami-dade oshpd" data-impeller="propeller" data-drive="belt-drive" data-housing="tubular"
+              data-discharge="downblast" class="product-card" itemscope itemtype="https://schema.org/Product">
+              <!-- Front side -->
+              <div class="product-card-front">
+                <h3 class="product-category" itemprop="category">Supply Plenums</h3>
+                <div class="product-image-container">
+                  <img src="./imgs/External Supply Plenums.png" alt="External supply plenum system for optimal air distribution" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                </div>
+                <div class="product-card-footer">
+                  <meta itemprop="name" content="External Supply Plenums">
+                  <meta itemprop="description" content="External supply plenum systems for optimal air distribution">
+                  <button class="product-details-btn" aria-label="View details for External Supply Plenums">Details</button>
+                  <a href="#supply-plenums" class="quick-view-link" aria-label="Quick view of External Supply Plenums">
+                    <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                      <path
+                        d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                    </svg>
+                    <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                      <path
+                        d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                    </svg>
+                    <span>Quick View</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Back side (product overview) -->
+              <div class="product-card-back">
+                <p class="product-overview-description">
+                  External supply plenum systems engineered for optimal air distribution throughout industrial facilities. Features corrosion-resistant materials and precision-engineered airflow
+                  patterns.
+                </p>
+                <ul class="product-overview-specs">
+                  <li>Custom sizing available</li>
+                  <li>Pressure ratings up to 10 in. wg.</li>
+                </ul>
+                <div class="product-overview-certifications">
+                  <h4>Certifications:</h4>
+                  <ul>
+                    <li>SMACNA construction standards</li>
+                    <li>ASTM material specifications</li>
+                    <li>LEED compliant options</li>
+                    <li>Fire-rated assemblies available</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </li>
 
-          <div class="product-image">
-            <img src="imgs/Filteration.png" alt="Grease X-Tractor filtration system with advanced grease extraction" loading="lazy" />
-          </div>
-          <div class="product-content">
-            <a href="/filtration/grease-x-tractor" class="details-button" aria-label="View Grease X-Tractor details">
-              Details
-            </a>
-            <a href="#" class="quick-view-link" aria-label="Quick view Grease X-Tractor" data-quick-view>
-              <span class="material-symbols-outlined">visibility</span>
-              Quick View
-            </a>
-          </div>
-        </article>
+          <li>
+            <article data-application="restaurant high-temp" data-certifications="ul-705 amca-air-sound" data-impeller="centaxial-wheel" data-drive="direct-drive" data-housing="spun-aluminum" data-discharge="upblast"
+              class="product-card" itemscope itemtype="https://schema.org/Product">
+              <!-- Front side -->
+              <div class="product-card-front">
+                <h3 class="product-category" itemprop="category">Fire Suppression</h3>
+                <div class="product-image-container">
+                  <img src="./imgs/Fire Supression.png" alt="Comprehensive fire suppression system for industrial safety" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                </div>
+                <div class="product-card-footer">
+                  <meta itemprop="name" content="Fire Suppression Systems">
+                  <meta itemprop="description" content="Comprehensive fire suppression solutions for industrial safety">
+                  <button class="product-details-btn" aria-label="View details for Fire Suppression Systems">Details</button>
+                  <a href="#fire-suppression" class="quick-view-link" aria-label="Quick view of Fire Suppression Systems">
+                    <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                      <path
+                        d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                    </svg>
+                    <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                      <path
+                        d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                    </svg>
+                    <span>Quick View</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Back side (product overview) -->
+              <div class="product-card-back">
+                <p class="product-overview-description">
+                  Comprehensive fire suppression solutions designed for industrial safety. Features advanced detection systems and rapid response capabilities to protect critical infrastructure.
+                </p>
+                <ul class="product-overview-specs">
+                  <li>NFPA 72 compliant detection</li>
+                  <li>Response time under 60 seconds</li>
+                </ul>
+                <div class="product-overview-certifications">
+                  <h4>Certifications:</h4>
+                  <ul>
+                    <li>NFPA 72 certified</li>
+                    <li>UL listed fire suppression</li>
+                    <li>FM approved systems</li>
+                    <li>Local authority approval</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </li>
 
-        <!-- Grease Grabber Card -->
-        <article class="product-card" data-product-name="Grease Grabber™"
-          data-product-desc="The Grease Grabber™ is a professional utility distribution system providing efficient water, gas, and electrical connections for commercial kitchen operations. Features advanced grease removal technology with multiple processing units."
-          data-product-specs='["30 to 12,000 cfm","Up to 3.0 in. wg.","Multi-unit processing"]'
-          data-product-certs='["High Wind & Hurricane","Seismic","UL/cUL 705","AMCA licensed for FEI & Air Performance","NSF certified","Utility distribution certified","Industrial grade"]'
-          data-product-image="imgs/External Supply Plenums.png">
-          <div class="product-content">
-            <h2 class="product-title">Grease Grabber™</h2>
-          </div>
+          <li>
+            <article data-application="special-ventilation" data-certifications="amca-air-sound" data-impeller="mixed-flow-wheel" data-drive="belt-drive" data-housing="spun-aluminum" data-discharge="downblast"
+              class="product-card" itemscope itemtype="https://schema.org/Product">
+              <!-- Front side -->
+              <div class="product-card-front">
+                <h3 class="product-category" itemprop="category">Pollution Control</h3>
+                <div class="product-image-container">
+                  <img src="./imgs/Pollution Control.png" alt="Advanced pollution control system for environmental compliance" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                </div>
+                <div class="product-card-footer">
+                  <meta itemprop="name" content="Pollution Control">
+                  <meta itemprop="description" content="Advanced pollution control systems for environmental compliance">
+                  <button class="product-details-btn" aria-label="View details for Pollution Control">Details</button>
+                  <a href="#pollution-control" class="quick-view-link" aria-label="Quick view of Pollution Control">
+                    <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                      <path
+                        d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                    </svg>
+                    <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                      <path
+                        d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                    </svg>
+                    <span>Quick View</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Back side (product overview) -->
+              <div class="product-card-back">
+                <p class="product-overview-description">
+                  Advanced pollution control systems for environmental compliance. Engineered to meet strict emissions standards while maintaining operational efficiency.
+                </p>
+                <ul class="product-overview-specs">
+                  <li>99.9% particulate removal</li>
+                  <li>EPA compliance guaranteed</li>
+                </ul>
+                <div class="product-overview-certifications">
+                  <h4>Certifications:</h4>
+                  <ul>
+                    <li>EPA certified technology</li>
+                    <li>ISO 14001 environmental</li>
+                    <li>CARB compliant</li>
+                    <li>CE marked components</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </li>
 
-          <div class="product-image">
-            <img src="imgs/External Supply Plenums.png" alt="Grease Grabber filtration system for commercial kitchen ventilation" loading="lazy" />
-          </div>
-          <div class="product-content">
-            <a href="/filtration/grease-grabber" class="details-button" aria-label="View Grease Grabber details">
-              Details
-            </a>
-            <a href="#" class="quick-view-link" aria-label="Quick view Grease Grabber" data-quick-view>
-              <span class="material-symbols-outlined">visibility</span>
-              Quick View
-            </a>
-          </div>
-        </article>
+          <li>
+            <article data-application="restaurant" data-certifications="ul-restaurant-exhaust" data-impeller="propeller" data-drive="direct-drive" data-housing="fab-h-hood" data-discharge="upblast" class="product-card"
+              itemscope itemtype="https://schema.org/Product">
+              <!-- Front side -->
+              <div class="product-card-front">
+                <h3 class="product-category" itemprop="category">Utility Distribution</h3>
+                <div class="product-image-container">
+                  <img src="./imgs/Utility Distribution.png" alt="Efficient utility distribution system for industrial facilities" class="product-image" itemprop="image" width="228" height="194" loading="lazy">
+                </div>
+                <div class="product-card-footer">
+                  <meta itemprop="name" content="Utility Distribution">
+                  <meta itemprop="description" content="Efficient utility distribution systems for industrial facilities">
+                  <button class="product-details-btn" aria-label="View details for Utility Distribution">Details</button>
+                  <a href="#utility-distribution" class="quick-view-link" aria-label="Quick view of Utility Distribution">
+                    <svg class="quick-view-icon visibility-off" aria-hidden="true" viewBox="0 0 15 14">
+                      <path
+                        d="M10.295 7.424 9.307 6.4q.153-.83-.46-1.556-.614-.724-1.586-.565l-.988-1.025q.29-.142.588-.213.298-.07.639-.07 1.279 0 2.173.928.895.927.895 2.254 0 .353-.068.662t-.205.61m2.182 2.228-.988-.99a7.6 7.6 0 0 0 1.15-1.123q.503-.61.861-1.387-.853-1.785-2.446-2.838Q9.46 2.264 7.5 2.263q-.494 0-.972.07-.477.07-.937.212L4.534 1.45A7.4 7.4 0 0 1 7.5.85q2.574 0 4.585 1.475A8.37 8.37 0 0 1 15 6.152a8.4 8.4 0 0 1-1.031 1.935 7.7 7.7 0 0 1-1.492 1.565M12.818 14l-2.863-2.934q-.597.195-1.202.291a8 8 0 0 1-1.253.098q-2.574 0-4.585-1.476A8.37 8.37 0 0 1 0 6.152q.359-.937.903-1.742a8 8 0 0 1 1.245-1.44L.273.99 1.227 0l12.546 13.01zM3.102 3.96q-.494.46-.903 1.007T1.5 6.152q.853 1.784 2.446 2.837Q5.54 10.039 7.5 10.04q.34 0 .665-.044.323-.045.665-.097l-.614-.672a3 3 0 0 1-.358.08 2.9 2.9 0 0 1-2.531-.902q-.895-.928-.895-2.253 0-.195.025-.372t.077-.37z" />
+                    </svg>
+                    <svg class="quick-view-icon visibility-on" aria-hidden="true" viewBox="0 0 15 10">
+                      <path
+                        d="M7.5 8q1.279 0 2.173-.875A2.86 2.86 0 0 0 10.568 5a2.86 2.86 0 0 0-.895-2.125Q8.78 2 7.5 2t-2.173.875A2.86 2.86 0 0 0 4.432 5q0 1.25.895 2.125Q6.22 8 7.5 8m0-1.2q-.767 0-1.304-.525A1.72 1.72 0 0 1 5.659 5q0-.75.537-1.275T7.5 3.2t1.304.525T9.341 5t-.537 1.275T7.5 6.8m0 3.2a8 8 0 0 1-4.534-1.358A7.76 7.76 0 0 1 0 5a7.76 7.76 0 0 1 2.966-3.642A8 8 0 0 1 7.5 0q2.489 0 4.534 1.358A7.76 7.76 0 0 1 15 5a7.76 7.76 0 0 1-2.966 3.642A8 8 0 0 1 7.5 10m0-1.333q1.926 0 3.537-.992A6.57 6.57 0 0 0 13.5 5a6.57 6.57 0 0 0-2.463-2.675A6.6 6.6 0 0 0 7.5 1.333q-1.926 0-3.537.992A6.57 6.57 0 0 0 1.5 5a6.57 6.57 0 0 0 2.463 2.675 6.6 6.6 0 0 0 3.537.992" />
+                    </svg>
+                    <span>Quick View</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Back side (product overview) -->
+              <div class="product-card-back">
+                <p class="product-overview-description">
+                  Efficient utility distribution systems for industrial facilities. Designed for reliable delivery of utilities with minimal energy loss and maximum operational flexibility.
+                </p>
+                <ul class="product-overview-specs">
+                  <li>Modular design architecture</li>
+                  <li>99.9% uptime reliability</li>
+                </ul>
+                <div class="product-overview-certifications">
+                  <h4>Certifications:</h4>
+                  <ul>
+                    <li>IEEE electrical standards</li>
+                    <li>ASME pressure vessel code</li>
+                    <li>NEC compliant installation</li>
+                    <li>Energy efficiency certified</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
       </section>
     </div>
   </main>
 
-  <!-- Quick View Modal -->
-  <div id="quickViewModal" class="quick-view-modal" aria-hidden="true">
-    <div class="quick-view-backdrop"></div>
-    <div class="quick-view-container">
-      <div class="quick-view-card">
-        <div class="quick-view-front">
-          <div class="quick-view-header">
-            <h2 id="quickViewTitle" class="quick-view-title"></h2>
-            <button class="quick-view-close" aria-label="Close quick view">
-              <span class="material-symbols-outlined">close</span>
-            </button>
-          </div>
-          <div class="quick-view-content">
-            <div class="quick-view-image-container">
-              <img id="quickViewImage" class="quick-view-image" alt="" />
-            </div>
-            <div class="quick-view-details">
-              <p id="quickViewDesc" class="quick-view-description"></p>
-              <div class="quick-view-specs">
-                <h3>Specifications</h3>
-                <ul id="quickViewSpecsList" class="quick-view-list"></ul>
-              </div>
-              <div class="quick-view-certs">
-                <h3>Certifications</h3>
-                <ul id="quickViewCertsList" class="quick-view-list"></ul>
-              </div>
-            </div>
-          </div>
-          <div class="quick-view-footer">
-            <a id="quickViewDetailsBtn" href="#" class="details-button">
-              View Details
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Scroll to Top Button -->
   <a href="#top" class="scroll-to-top" aria-label="Scroll to top">
     <span class="material-symbols-outlined">arrow_circle_up</span>
   </a>
 
-  <!-- Performance and Analytics Scripts -->
   <script>
-    // Performance optimization: Lazy load images
-    document.addEventListener("DOMContentLoaded", function () {
-      // Add loading="lazy" to images when they're added
-      const images = document.querySelectorAll("img");
-      images.forEach((img) => {
-        img.setAttribute("loading", "lazy");
-      });
-
-      // Quick View Modal Functionality
-      const quickViewModal = document.getElementById("quickViewModal");
-      const closeButtons = document.querySelectorAll(".quick-view-close");
-      const quickViewLinks = document.querySelectorAll("[data-quick-view]");
-
-      // Open Quick View Modal
-      function openQuickView(productCard) {
-        const productName = productCard.dataset.productName;
-        const productDesc = productCard.dataset.productDesc;
-        const productSpecs = JSON.parse(
-          productCard.dataset.productSpecs || "[]"
-        );
-        const productCerts = JSON.parse(
-          productCard.dataset.productCerts || "[]"
-        );
-        const productImage = productCard.dataset.productImage;
-
-        // Get the details button URL from the product card
-        const detailsLink = productCard.querySelector(".details-button");
-        const productUrl = detailsLink ? detailsLink.href : "#";
-
-        // Populate modal content
-        document.getElementById("quickViewTitle").textContent = productName;
-        document.getElementById("quickViewDesc").textContent = productDesc;
-        document.getElementById("quickViewImage").src = productImage;
-        document.getElementById("quickViewImage").alt = productName;
-
-        // Set the View Details button URL
-        document.getElementById("quickViewDetailsBtn").href = productUrl;
-
-        // Populate specs list
-        const specsList = document.getElementById("quickViewSpecsList");
-        specsList.innerHTML = "";
-        productSpecs.forEach((spec) => {
-          const li = document.createElement("li");
-          li.textContent = spec;
-          specsList.appendChild(li);
-        });
-
-        // Populate certs list
-        const certsList = document.getElementById("quickViewCertsList");
-        certsList.innerHTML = "";
-        productCerts.forEach((cert) => {
-          const li = document.createElement("li");
-          li.textContent = cert;
-          certsList.appendChild(li);
-        });
-
-        // Show modal
-        quickViewModal.classList.add("active");
-        document.body.style.overflow = "hidden";
-      }
-
-      // Close Quick View Modal
-      function closeQuickView() {
-        quickViewModal.classList.remove("active");
-        document.body.style.overflow = "";
-      }
-
-      // Event Listeners
-      quickViewLinks.forEach((link) => {
-        link.addEventListener("click", function (e) {
+    // Simple toggle functionality - content is already in HTML
+    document.addEventListener('DOMContentLoaded', function () {
+      // Quick view links - toggle card flip to show product overview
+      document.querySelectorAll('.quick-view-link').forEach(link => {
+        link.addEventListener('click', function (e) {
           e.preventDefault();
-          const productCard = this.closest(".product-card");
-          openQuickView(productCard);
+          const card = this.closest('.product-card');
+          card.classList.toggle('is-flipped');
         });
       });
 
-      closeButtons.forEach((button) => {
-        button.addEventListener("click", closeQuickView);
+      // Click on product overview (back side) to close and return to card front
+      document.querySelectorAll('.product-card-back').forEach(backSide => {
+        backSide.addEventListener('click', function (e) {
+          const card = this.closest('.product-card');
+          card.classList.remove('is-flipped');
+        });
       });
 
-      // Close modal when clicking backdrop
-      quickViewModal.addEventListener("click", function (e) {
-        if (
-          e.target === quickViewModal ||
-          e.target.classList.contains("quick-view-backdrop")
-        ) {
-          closeQuickView();
-        }
-      });
-
-      // Close modal with Escape key
-      document.addEventListener("keydown", function (e) {
-        if (
-          e.key === "Escape" &&
-          quickViewModal.classList.contains("active")
-        ) {
-          closeQuickView();
+      // ESC key to close any flipped card
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.product-card.is-flipped').forEach(card => {
+            card.classList.remove('is-flipped');
+          });
         }
       });
     });
