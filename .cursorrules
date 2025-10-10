@@ -343,8 +343,7 @@ document.addEventListener('keydown', function (e) { });
 - ❌ Don't use IDs for styling
 - ❌ Don't use `!important` unless necessary
 - ❌ Don't use fixed pixel widths (use max-width)
-- ❌ Don't forget to remove unused
- CSS
+- ❌ Don't forget to remove unused CSS
 
 ### JavaScript
 - ❌ Don't use jQuery or external libraries

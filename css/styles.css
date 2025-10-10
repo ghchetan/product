@@ -193,7 +193,7 @@ body {
    Breadcrumb Navigation
    ========================================================================== */
 .breadcrumb {
-  margin-bottom: 26px;
+  margin-bottom: 22px;
 }
 
 .breadcrumb-list {
@@ -218,7 +218,7 @@ body {
 .breadcrumb-arrow {
   font-size: 16px;
   color: var(--text-light);
-  margin: 0 var(--spacing-2);
+  margin: 0;
   vertical-align: middle;
 }
 
@@ -242,20 +242,16 @@ body {
 /* ==========================================================================
    Page Header
    ========================================================================== */
-.page-title {
-  font-size: var(--font-size-4xl);
-  font-weight: 500;
-  font-family: "HelveticaNeue-Medium";
-  color: var(--text-color);
-  margin-bottom: var(--spacing-4);
-  line-height: 1.2;
-}
+ 
 
-.page-description {
-  font-size: var(--font-size-sm);
+.page-header p {
+  font-size: 15px;
   font-weight: 500;
   color: #333333;
-  line-height: 22px;
+  line-height: 22px;  
+  margin: 0 auto;
+  text-align: left;
+  width: 100%;
 }
  
 
@@ -281,7 +277,7 @@ body {
     font-size: var(--font-size-2xl);
   }
 
-  .page-description {
+  .page-header p {
     font-size: var(--font-size-base);
   }
  
@@ -354,7 +350,7 @@ body {
     color: #000;
   }
 
-  .page-description {
+  .page-header p {
     color: #000;
   }
 }
@@ -692,23 +688,19 @@ body {
 
       .page-header {
           text-align: center;
-          margin-bottom: 40px;
+          margin-bottom: 32px;
       }
 
       .page-header h1 {
-          font-family: 'Helvetica-Bold', -apple-system, sans-serif;
-          font-size: clamp(24px, 5vw, 32px);
-          font-weight: 700;
-          color: var(--text-primary);
-          margin-bottom: 12px;
+        font-family: 'Helvetica-Medium', -apple-system, sans-serif;
+        font-size: clamp(24px, 5vw, 40px);
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-bottom: 9px;
+        text-align: left;
       }
 
-      .page-header p {
-          font-size: 16px;
-          color: var(--text-secondary);
-          max-width: 600px;
-          margin: 0 auto;
-      }
+ 
 
       .product-cards {
           display: grid;
