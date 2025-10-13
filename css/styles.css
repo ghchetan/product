@@ -204,6 +204,9 @@
 .is-flipped .quick-view-link {
   color: var(--primary-color);
 }
+.is-flipped .visibility-off{
+  fill: var(--primary-color);
+}
 
 /* Back side (product overview) */
 .product-card-back {
