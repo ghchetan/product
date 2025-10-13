@@ -31,32 +31,33 @@ All design tokens are defined as CSS custom properties in `:root`. Use these var
 
 ```css
 /* Brand Colors */
---primary-color: #075697;           /* Primary blue */
+--primary-color: #075697; /* Primary blue */
 --primary-hover: rgba(7, 86, 151, 0.9); /* Primary blue hover */
---secondary-color: #1d4ed8;         /* Secondary blue */
---link-color: #999999;              /* Gray links */
+--secondary-color: #1d4ed8; /* Secondary blue */
+--link-color: #999999; /* Gray links */
 
 /* Text Colors */
---text-primary: #333333;            /* Main text color */
---text-secondary: #999999;          /* Secondary/muted text */
---text-light: #6b7280;              /* Light text for labels */
---text-color: #1f2937;              /* Alternative dark text */
+--text-primary: #333333; /* Main text color */
+--text-secondary: #999999; /* Secondary/muted text */
+--text-light: #6b7280; /* Light text for labels */
+--text-color: #1f2937; /* Alternative dark text */
 
 /* Background Colors */
---background-color: #ffffff;        /* White background */
---background-light: #fafafa;        /* Light gray background */
---background-sidebar: #f9fafb;      /* Sidebar background */
+--background-color: #ffffff; /* White background */
+--background-light: #fafafa; /* Light gray background */
+--background-sidebar: #f9fafb; /* Sidebar background */
 --background-overlay: rgba(255, 255, 255, 0.95); /* Modal overlay */
 --background-hover: rgba(37, 99, 235, 0.05); /* Hover background */
 --background-button-hover: #f0f0f0; /* Button hover background */
 
 /* Border Colors */
---border-color: #e5e7eb;            /* Default border */
---card-border: #e5e5e5;             /* Card borders */
---checkbox-border: #d1d5db;         /* Checkbox borders */
+--border-color: #e5e7eb; /* Default border */
+--card-border: #e5e5e5; /* Card borders */
+--checkbox-border: #d1d5db; /* Checkbox borders */
 ```
 
 **Usage:**
+
 ```css
 .my-element {
   color: var(--text-primary);
@@ -72,31 +73,32 @@ All design tokens are defined as CSS custom properties in `:root`. Use these var
 ### Font Families
 
 ```css
---font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
---font-family-heading: 'Helvetica-Bold', -apple-system, sans-serif;
---font-family-body: 'HelveticaNeue-Medium', -apple-system, sans-serif;
+--font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif;
+--font-family-heading: "Helvetica-Bold", -apple-system, sans-serif;
+--font-family-body: "HelveticaNeue-Medium", -apple-system, sans-serif;
 ```
 
 ### Font Sizes
 
-| Variable | Size | Usage |
-|----------|------|-------|
-| `--font-size-xs` | 11px | Very small text, mobile descriptions |
-| `--font-size-sm` | 13px | Small text, breadcrumbs, labels |
-| `--font-size-base` | 15px | Body text, paragraphs |
-| `--font-size-md` | 18px | Subheadings, buttons |
-| `--font-size-lg` | 20px | Section headings |
-| `--font-size-xl` | 24px | Page titles (mobile) |
-| `--font-size-2xl` | 32px | Page titles (tablet) |
-| `--font-size-3xl` | 40px | Page titles (desktop) |
+| Variable           | Size | Usage                                |
+| ------------------ | ---- | ------------------------------------ |
+| `--font-size-xs`   | 11px | Very small text, mobile descriptions |
+| `--font-size-sm`   | 13px | Small text, breadcrumbs, labels      |
+| `--font-size-base` | 15px | Body text, paragraphs                |
+| `--font-size-md`   | 18px | Subheadings, buttons                 |
+| `--font-size-lg`   | 20px | Section headings                     |
+| `--font-size-xl`   | 24px | Page titles (mobile)                 |
+| `--font-size-2xl`  | 32px | Page titles (tablet)                 |
+| `--font-size-3xl`  | 40px | Page titles (desktop)                |
 
 ### Line Heights
 
 ```css
---line-height-tight: 1.41667;    /* Compact text */
---line-height-base: 1.5;         /* Standard */
---line-height-relaxed: 1.6;      /* Body text */
---line-height-loose: 1.8;        /* Spacious headings */
+--line-height-tight: 1.41667; /* Compact text */
+--line-height-base: 1.5; /* Standard */
+--line-height-relaxed: 1.6; /* Body text */
+--line-height-loose: 1.8; /* Spacious headings */
 ```
 
 ### Font Examples
@@ -106,7 +108,9 @@ All design tokens are defined as CSS custom properties in `:root`. Use these var
 <h1 style="font-family: var(--font-family-heading);">Product Title</h1>
 
 <!-- Body Font -->
-<p style="font-family: var(--font-family-body); font-size: var(--font-size-base);">
+<p
+  style="font-family: var(--font-family-body); font-size: var(--font-size-base);"
+>
   Body text content
 </p>
 
@@ -121,25 +125,28 @@ All design tokens are defined as CSS custom properties in `:root`. Use these var
 ## 🎨 Color Palette
 
 ### Primary Colors
-| Color | Hex | Usage | Example |
-|-------|-----|-------|---------|
-| Primary | `#075697` | Buttons, links, focus states | <div style="width:40px;height:20px;background:#075697;border:1px solid #ccc;"></div> |
-| Primary Hover | `rgba(7, 86, 151, 0.9)` | Hover states | <div style="width:40px;height:20px;background:rgba(7,86,151,0.9);border:1px solid #ccc;"></div> |
-| Secondary | `#1d4ed8` | Alternative actions | <div style="width:40px;height:20px;background:#1d4ed8;border:1px solid #ccc;"></div> |
+
+| Color         | Hex                     | Usage                        | Example                                                                                         |
+| ------------- | ----------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------- |
+| Primary       | `#075697`               | Buttons, links, focus states | <div style="width:40px;height:20px;background:#075697;border:1px solid #ccc;"></div>            |
+| Primary Hover | `rgba(7, 86, 151, 0.9)` | Hover states                 | <div style="width:40px;height:20px;background:rgba(7,86,151,0.9);border:1px solid #ccc;"></div> |
+| Secondary     | `#1d4ed8`               | Alternative actions          | <div style="width:40px;height:20px;background:#1d4ed8;border:1px solid #ccc;"></div>            |
 
 ### Text Colors
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Text Primary | `#333333` | Main body text |
+
+| Color          | Hex       | Usage              |
+| -------------- | --------- | ------------------ |
+| Text Primary   | `#333333` | Main body text     |
 | Text Secondary | `#999999` | Muted text, labels |
-| Text Light | `#6b7280` | Subtle text |
+| Text Light     | `#6b7280` | Subtle text        |
 
 ### Background Colors
-| Color | Value | Usage |
-|-------|-------|-------|
-| White | `#ffffff` | Cards, modals |
+
+| Color      | Value     | Usage           |
+| ---------- | --------- | --------------- |
+| White      | `#ffffff` | Cards, modals   |
 | Light Gray | `#fafafa` | Page background |
-| Sidebar | `#f9fafb` | Filter sidebar |
+| Sidebar    | `#f9fafb` | Filter sidebar  |
 
 ---
 
@@ -147,17 +154,17 @@ All design tokens are defined as CSS custom properties in `:root`. Use these var
 
 Our spacing system uses a **4px base unit** for consistent rhythm.
 
-| Variable | Value | Usage |
-|----------|-------|-------|
-| `--spacing-1` | 4px | Minimal spacing |
-| `--spacing-2` | 8px | Small gaps |
-| `--spacing-3` | 12px | Medium spacing |
-| `--spacing-4` | 16px | Default spacing |
-| `--spacing-5` | 20px | Comfortable spacing |
-| `--spacing-6` | 24px | Section spacing |
-| `--spacing-8` | 32px | Large spacing |
-| `--spacing-10` | 40px | Extra large spacing |
-| `--spacing-12` | 48px | Maximum spacing |
+| Variable       | Value | Usage               |
+| -------------- | ----- | ------------------- |
+| `--spacing-1`  | 4px   | Minimal spacing     |
+| `--spacing-2`  | 8px   | Small gaps          |
+| `--spacing-3`  | 12px  | Medium spacing      |
+| `--spacing-4`  | 16px  | Default spacing     |
+| `--spacing-5`  | 20px  | Comfortable spacing |
+| `--spacing-6`  | 24px  | Section spacing     |
+| `--spacing-8`  | 32px  | Large spacing       |
+| `--spacing-10` | 40px  | Extra large spacing |
+| `--spacing-12` | 48px  | Maximum spacing     |
 
 ### Spacing Examples
 
@@ -185,6 +192,7 @@ Our spacing system uses a **4px base unit** for consistent rhythm.
 ### Product Cards
 
 #### `.product-card`
+
 Main product card container.
 
 ```html
@@ -194,19 +202,21 @@ Main product card container.
 ```
 
 **Properties:**
+
 - Width: 288px (max)
 - Height: 354px
 - Border: 1px solid `--card-border`
 - Shadow: `--shadow-sm` (hover: `--shadow-lg`)
 
 #### `.product-card-front`
+
 Front side of the card (default view).
 
 ```html
 <div class="product-card-front">
   <h3 class="product-category">Category Name</h3>
   <div class="product-image-container">
-    <img class="product-image" src="..." alt="...">
+    <img class="product-image" src="..." alt="..." />
   </div>
   <div class="product-card-footer">
     <button class="product-details-btn">Details</button>
@@ -216,6 +226,7 @@ Front side of the card (default view).
 ```
 
 #### `.product-card-back`
+
 Back side showing product overview (appears when flipped).
 
 ```html
@@ -236,14 +247,14 @@ Back side showing product overview (appears when flipped).
 
 ### Product Card Sub-Components
 
-| Class | Purpose | Parent |
-|-------|---------|--------|
-| `.product-category` | Product title/category | `.product-card-front` |
-| `.product-image-container` | Image wrapper | `.product-card-front` |
-| `.product-image` | Product image | `.product-image-container` |
-| `.product-card-footer` | Button/link container | `.product-card-front` |
-| `.product-details-btn` | Primary CTA button | `.product-card-footer` |
-| `.quick-view-link` | Quick view toggle | `.product-card-footer` |
+| Class                      | Purpose                | Parent                     |
+| -------------------------- | ---------------------- | -------------------------- |
+| `.product-category`        | Product title/category | `.product-card-front`      |
+| `.product-image-container` | Image wrapper          | `.product-card-front`      |
+| `.product-image`           | Product image          | `.product-image-container` |
+| `.product-card-footer`     | Button/link container  | `.product-card-front`      |
+| `.product-details-btn`     | Primary CTA button     | `.product-card-footer`     |
+| `.quick-view-link`         | Quick view toggle      | `.product-card-footer`     |
 
 ### Breadcrumb Navigation
 
@@ -282,7 +293,7 @@ Back side showing product overview (appears when flipped).
     <h3 class="filter-title">Filter Category</h3>
     <div class="filter-options">
       <label class="filter-option">
-        <input type="checkbox">
+        <input type="checkbox" />
         <span class="checkbox-custom"></span>
         <span class="filter-label">Option Name</span>
       </label>
@@ -295,9 +306,7 @@ Back side showing product overview (appears when flipped).
 
 ```html
 <div class="active-filters">
-  <button class="filter-tag">
-    Category: Value ×
-  </button>
+  <button class="filter-tag">Category: Value ×</button>
   <button class="clear-filters-btn">Clear All</button>
 </div>
 ```
@@ -309,6 +318,7 @@ Back side showing product overview (appears when flipped).
 ### Accessibility Utilities
 
 #### `.sr-only`
+
 Screen reader only - visually hidden but accessible to assistive technology.
 
 ```html
@@ -316,6 +326,7 @@ Screen reader only - visually hidden but accessible to assistive technology.
 ```
 
 #### `.skip-link`
+
 Skip to main content link for keyboard navigation.
 
 ```html
@@ -324,16 +335,18 @@ Skip to main content link for keyboard navigation.
 
 ### Layout Utilities
 
-#### `.main-container`
-Centered container with max-width.
+#### `main` element
+
+The `<main>` element is styled directly with centered container and max-width (no wrapper div needed).
 
 ```html
-<div class="main-container">
+<main id="main-content" role="main">
   <!-- Content -->
-</div>
+</main>
 ```
 
 **Properties:**
+
 - Max-width: 1248px
 - Centered with `margin: 0 auto`
 
@@ -344,6 +357,7 @@ Centered container with max-width.
 State classes use the `is-` prefix to indicate dynamic states.
 
 ### `.is-flipped`
+
 Applied to `.product-card` to show the back side.
 
 ```html
@@ -353,6 +367,7 @@ Applied to `.product-card` to show the back side.
 ```
 
 **Effects:**
+
 - Hides `.product-card-front`
 - Shows `.product-card-back`
 - Changes `.quick-view-link` color to primary
@@ -364,12 +379,12 @@ Applied to `.product-card` to show the back side.
 
 Our mobile-first approach uses the following breakpoints:
 
-| Breakpoint | Max Width | Target Devices |
-|------------|-----------|----------------|
-| Mobile | 480px | Small phones |
-| Tablet | 768px | Tablets, large phones |
-| Desktop | 1024px | Small laptops |
-| Large Desktop | 1248px+ | Desktop monitors |
+| Breakpoint    | Max Width | Target Devices        |
+| ------------- | --------- | --------------------- |
+| Mobile        | 480px     | Small phones          |
+| Tablet        | 768px     | Tablets, large phones |
+| Desktop       | 1024px    | Small laptops         |
+| Large Desktop | 1248px+   | Desktop monitors      |
 
 ### Responsive Examples
 
@@ -416,16 +431,15 @@ Our mobile-first approach uses the following breakpoints:
 ### Transition Variables
 
 ```css
---transition-fast: 0.2s ease;    /* Quick interactions */
---transition: 0.3s ease;          /* Standard transitions */
+--transition-fast: 0.2s ease; /* Quick interactions */
+--transition: 0.3s ease; /* Standard transitions */
 ```
 
 ### Usage
 
 ```css
 .button {
-  transition: background-color var(--transition-fast),
-              transform var(--transition-fast);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .card {
@@ -451,37 +465,41 @@ Use `will-change` only during interaction:
 ### ✅ Do's
 
 1. **Use CSS Variables**
+
    ```css
    /* ✅ Good */
    color: var(--text-primary);
-   
+
    /* ❌ Bad */
    color: #333333;
    ```
 
 2. **Use Semantic Class Names**
+
    ```html
    <!-- ✅ Good -->
    <button class="product-details-btn">Details</button>
-   
+
    <!-- ❌ Bad -->
    <button class="blue-btn">Details</button>
    ```
 
 3. **Follow Spacing Scale**
+
    ```css
    /* ✅ Good */
    padding: var(--spacing-4);
-   
+
    /* ❌ Bad */
    padding: 17px;
    ```
 
 4. **Use State Classes with Prefixes**
+
    ```html
    <!-- ✅ Good -->
    <div class="card is-active"></div>
-   
+
    <!-- ❌ Bad -->
    <div class="card active"></div>
    ```
@@ -489,21 +507,23 @@ Use `will-change` only during interaction:
 ### ❌ Don'ts
 
 1. **Don't Use Inline Styles**
+
    ```html
    <!-- ❌ Bad -->
    <div style="color: red; margin: 10px;"></div>
-   
+
    <!-- ✅ Good -->
    <div class="error-message"></div>
    ```
 
 2. **Don't Use `!important` Unless Necessary**
+
    ```css
    /* ❌ Bad */
    .element {
      color: red !important;
    }
-   
+
    /* ✅ Good - Increase specificity */
    .parent .element {
      color: red;
@@ -511,11 +531,13 @@ Use `will-change` only during interaction:
    ```
 
 3. **Don't Skip Heading Levels**
+
    ```html
    <!-- ❌ Bad -->
    <h1>Title</h1>
-   <h3>Subtitle</h3> <!-- Skipped h2 -->
-   
+   <h3>Subtitle</h3>
+   <!-- Skipped h2 -->
+
    <!-- ✅ Good -->
    <h1>Title</h1>
    <h2>Subtitle</h2>
@@ -528,13 +550,14 @@ Use `will-change` only during interaction:
 Use these predefined z-index values for consistent layering:
 
 ```css
---z-base: 1;          /* Default layer */
---z-close-btn: 10;    /* Close buttons on cards */
---z-skip-link: 100;   /* Skip to content link */
+--z-base: 1; /* Default layer */
+--z-close-btn: 10; /* Close buttons on cards */
+--z-skip-link: 100; /* Skip to content link */
 --z-scroll-top: 1000; /* Scroll to top button */
 ```
 
 **Usage:**
+
 ```css
 .modal {
   z-index: var(--z-modal);
@@ -624,6 +647,7 @@ css/
 ## 🚀 Performance Tips
 
 1. **Use `contain` for isolated components**
+
    ```css
    .product-card {
      contain: layout style paint;
@@ -631,6 +655,7 @@ css/
    ```
 
 2. **Optimize animations with `will-change`**
+
    ```css
    .element:hover {
      will-change: transform;
@@ -638,6 +663,7 @@ css/
    ```
 
 3. **Use `font-display: swap` for custom fonts**
+
    ```css
    @font-face {
      font-display: swap;
@@ -646,7 +672,7 @@ css/
 
 4. **Lazy load images**
    ```html
-   <img loading="lazy" src="..." alt="...">
+   <img loading="lazy" src="..." alt="..." />
    ```
 
 ---
@@ -684,6 +710,7 @@ var(--shadow-sm)           - Small shadow
 ## 📞 Support
 
 For questions or contributions:
+
 - **Documentation:** See `/docs` folder
 - **Issues:** Report via project repository
 - **Updates:** Check CHANGELOG.md for version history
@@ -693,4 +720,3 @@ For questions or contributions:
 **Last Updated:** October 12, 2025  
 **Version:** 1.0.0  
 **Maintained by:** Product Development Team
-

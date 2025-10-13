@@ -28,6 +28,7 @@
 .product-card {
   width: 100%;
   max-width: var(--card-max-width);
+  min-width: var(--card-max-width);
   height: var(--card-height);
   border: 1px solid var(--card-border);
   border-radius: 4px;
@@ -209,7 +210,7 @@
 .is-flipped .quick-view-link {
   color: var(--primary-color);
 }
-.is-flipped .visibility-off{
+.is-flipped .visibility-off {
   fill: var(--primary-color);
 }
 
@@ -512,7 +513,6 @@
 
   .filters-sidebar {
     position: static;
-    order: 2;
   }
 }
 

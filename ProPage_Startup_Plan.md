@@ -1,6 +1,75 @@
 # ProPage Startup Plan - Chat Conversation Log
 
-## Latest Session - Product Card Navigation Implementation
+## Latest Session - Removed Unnecessary .main-container Wrapper
+
+### User Question
+
+User questioned why there's a `<div class="main-container">` wrapper inside the `<main>` element:
+
+```html
+<main id="main-content" role="main">
+  <div class="main-container"></div>
+</main>
+```
+
+### Analysis
+
+The `.main-container` div was creating:
+
+- ❌ Redundant wrapper (divitis)
+- ❌ Duplicate centering (`margin: 0 auto` already on `main`)
+- ❌ Conflicting max-widths
+- ❌ Violation of cursor rules: "Apply classes directly to semantic elements when possible"
+
+### Changes Made
+
+#### 1. CSS Refactoring (css/common.css)
+
+**Merged `.main-container` styles into `main` selector:**
+
+- Removed redundant `.main-container` class definition
+- Simplified `main` element styles with single `max-width: var(--container-max-width)`
+- Updated responsive styles to apply directly to `main`
+- Updated print styles to target `main` instead of `.main-container`
+
+#### 2. HTML Structure Cleanup
+
+**Removed wrapper div from all pages:**
+
+- ✅ filtration.html - Removed `<div class="main-container">` wrapper
+- ✅ index.html - Removed `<div class="main-container">` wrapper
+- ✅ roof-products.html - Removed `<div class="main-container">` wrapper
+- Fixed indentation for proper semantic structure
+
+#### 3. Documentation Update (docs/STYLE_GUIDE.md)
+
+- Updated documentation to reflect direct styling of `<main>` element
+- Removed references to `.main-container` utility class
+- Added example showing proper semantic structure
+
+### Result
+
+**Cleaner, more semantic HTML structure:**
+
+```html
+<main id="main-content" role="main">
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb">...</nav>
+  <!-- Content -->
+</main>
+```
+
+**Benefits:**
+
+- ✅ Reduced DOM depth (better performance)
+- ✅ More semantic (follows HTML5 best practices)
+- ✅ Easier to maintain (fewer elements)
+- ✅ Follows cursor rules (minimize divs, apply classes directly)
+- ✅ No conflicting/duplicate styles
+
+---
+
+## Previous Session - Product Card Navigation Implementation
 
 ### User Request
 
