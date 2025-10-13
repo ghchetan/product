@@ -1,75 +1,389 @@
-/* Font Definitions */
+/* ==========================================================================
+   Common Styles - Shared Base Styles
+   Reusable base styles that can be imported across multiple pages
+   ========================================================================== */
+
+/* ==========================================================================
+   CSS Custom Properties - Design System
+   ========================================================================== */
+:root {
+  /* Brand Colors */
+  --primary-color: #075697;
+  --primary-hover: rgba(7, 86, 151, 0.9);
+  --secondary-color: #1d4ed8;
+  --link-color: #999999;
+  
+  /* Text Colors */
+  --text-primary: #333333;
+  --text-secondary: #999999;
+  --text-light: #6b7280;
+  --text-color: #1f2937;
+  
+  /* Background Colors */
+  --background-color: #ffffff;
+  --background-light: #fafafa;
+  --background-sidebar: #f9fafb;
+  --background-overlay: rgba(255, 255, 255, 0.95);
+  --background-hover: rgba(37, 99, 235, 0.05);
+  --background-button-hover: #f0f0f0;
+  
+  /* Border Colors */
+  --border-color: #e5e7eb;
+  --card-border: #e5e5e5;
+  --checkbox-border: #d1d5db;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-heading: 'Helvetica-Bold', -apple-system, sans-serif;
+  --font-family-body: 'HelveticaNeue-Medium', -apple-system, sans-serif;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+  
+  /* Layout */
+  --container-max-width: 1248px;
+  --card-max-width: 288px;
+  --card-height: 354px;
+  --sidebar-width: 280px;
+  --sidebar-width-tablet: 240px;
+  --card-back-height: 308px;
+  --icon-visibility-width: 15px;
+  --icon-visibility-on-height: 10px;
+  --icon-visibility-off-height: 14px;
+  --icon-scroll-top: 36px;
+  
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition: 0.3s ease;
+  
+  /* Z-Index Scale */
+  --z-close-btn: 10;
+  --z-skip-link: 100;
+  --z-scroll-top: 1000;
+}
+
+/* ==========================================================================
+   Font Definitions
+   ========================================================================== */
 @font-face {
   font-family: "Helvetica-Bold";
-  src: url("./fonts/Helvetica-Bold.ttf") format("truetype");
+  src: url("../fonts/Helvetica-Bold.ttf") format("truetype");
   font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica-Condensed-Black";
-  src: url("./fonts/Helvetica-Condensed-Black.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica-Condensed-Bold";
-  src: url("./fonts/Helvetica-Condensed-Bold.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica-Condensed";
-  src: url("./fonts/Helvetica-Condensed.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica-Narrow-Bold";
-  src: url("./fonts/Helvetica-Narrow-Bold.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica-Narrow-Oblique";
-  src: url("./fonts/Helvetica-Narrow-Oblique.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica";
-  src: url("./fonts/Helvetica.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "HelveticaCE-CondBold";
-  src: url("./fonts/HelveticaCE-CondBold.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "HelveticaCE-Narrow";
-  src: url("./fonts/HelveticaCE-Narrow.otf") format("opentype");
-  font-display: swap;
+  font-weight: 700;
 }
 
 @font-face {
   font-family: "HelveticaNeue-Medium";
-  src: url("./fonts/HelveticaNeueMedium.otf") format("opentype");
+  src: url("../fonts/HelveticaNeueMedium.otf") format("opentype");
   font-display: swap;
+  font-weight: 500;
 }
 
 @font-face {
-  font-family: "HelveticaCE";
-  src: url("./fonts/HelveticaCE.otf") format("opentype"),
-    url("./fonts/HelveticaCE.woff") format("woff"),
-    url("./fonts/HelveticaCE.woff2") format("woff2");
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica.otf") format("opentype");
   font-display: swap;
+  font-weight: 400;
 }
 
-@font-face {
-  font-family: "HelveticaConBQ-Medium";
-  src: url("./fonts/HelveticaConBQ-Medium.otf") format("opentype");
-  font-display: swap;
+/* ==========================================================================
+   CSS Reset
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 15px;
+  line-height: var(--line-height-relaxed);
+  color: var(--text-color);
+  background-color: var(--background-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   Accessibility Utilities
+   ========================================================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 8px;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background-color: var(--background-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: var(--background-color);
+  padding: 8px;
+  text-decoration: none;
+  z-index: var(--z-skip-link);
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ==========================================================================
+   Focus Styles for Accessibility
+   ========================================================================== */
+*:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
+.main-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: calc(var(--container-max-width) + 40px);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Breadcrumb Navigation
+   ========================================================================== */
+.breadcrumb {
+  margin-bottom: 22px;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  font-family: "Helvetica", var(--font-family);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.breadcrumb-arrow {
+  font-size: 16px;
+  color: var(--text-light);
+  margin: 0;
+  vertical-align: middle;
+}
+
+.breadcrumb-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.breadcrumb-link:hover,
+.breadcrumb-link:focus {
+  color: var(--primary-color);
+  outline: none;
+}
+
+.breadcrumb-current {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Page Header
+   ========================================================================== */
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.page-header h1 {
+  font-family: var(--font-family-body);
+  font-size: clamp(24px, 5vw, 40px);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.page-header p {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 22px;
+  margin: 0 auto;
+  text-align: left;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Scroll to Top Button
+   ========================================================================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  color: var(--primary-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-scroll-top);
+  text-decoration: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 24px;
+  color: var(--link-color);
+}
+
+.scroll-to-top .material-symbols-outlined {
+  font-size: 36px;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  line-height: 1;
+  color: rgba(0, 168, 228, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-to-top:hover .material-symbols-outlined,
+.scroll-to-top:focus .material-symbols-outlined {
+  color: var(--background-color);
+  transform: translateY(-2px);
+  outline: 0;
+  background-color: rgba(0, 168, 228, 1);
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   Responsive Design - Base
+   ========================================================================== */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 16px;
+  }
+
+  main {
+    padding: 24px 16px;
+  }
+
+  .page-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 24px;
+  }
+
+  .page-header p {
+    font-size: 15px;
+  }
+}
+
+/* ==========================================================================
+   Accessibility Features
+   ========================================================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-color: #000000;
+    --text-primary: #000000;
+    --text-light: #333333;
+    --border-color: #000000;
+    --card-border: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+@media print {
+  .main-container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .page-title,
+  .page-header p {
+    color: #000000;
+  }
+
+  .scroll-to-top,
+  .skip-link {
+    display: none;
+  }
+}

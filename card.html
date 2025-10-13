@@ -27,460 +27,9 @@
     <link rel="preload" href="./fonts/Helvetica-Bold.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="./fonts/HelveticaNeueMedium.otf" as="font" type="font/otf" crossorigin>
 
-    <style>
-        /* Critical CSS - Inlined for performance */
-
-        /* Optimized font loading - only used fonts */
-        @font-face {
-            font-family: "Helvetica-Bold";
-            src: url("./fonts/Helvetica-Bold.ttf") format("truetype");
-            font-display: swap;
-            font-weight: 700;
-        }
-
-        @font-face {
-            font-family: "HelveticaNeue-Medium";
-            src: url("./fonts/HelveticaNeueMedium.otf") format("opentype");
-            font-display: swap;
-            font-weight: 500;
-        }
-
-        /* CSS Reset */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Root variables for maintainability */
-        :root {
-            --primary-color: #075697;
-            --primary-hover: rgba(7, 86, 151, 0.9);
-            --text-primary: #333;
-            --text-secondary: #999;
-            --border-color: #e5e5e5;
-            --white: #fff;
-            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-            --transition-fast: 0.2s ease;
-            --border-radius-sm: 4px;
-            --border-radius-pill: 21px;
-            --spacing-sm: 6px;
-            --spacing-md: 15px;
-            --spacing-lg: 30px;
-            --spacing-xl: 32px;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.5;
-            color: var(--text-primary);
-            background-color: #fafafa;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 8px;
-            text-decoration: none;
-            z-index: 100;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-
-        main {
-            padding: 40px 20px;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .page-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .page-header h1 {
-            font-family: 'Helvetica-Bold', -apple-system, sans-serif;
-            font-size: clamp(24px, 5vw, 32px);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-        }
-
-        .page-header p {
-            font-size: 16px;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .product-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 288px));
-            gap: var(--spacing-xl);
-            justify-content: center;
-            list-style: none;
-        }
-
-        .product-cards li {
-            position: relative;
-        }
-
-        .product-card {
-            width: 100%;
-            max-width: 288px;
-            height: 354px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius-sm);
-            background-color: var(--white);
-            position: relative;
-            box-shadow: var(--shadow-sm);
-            transition: box-shadow var(--transition-fast);
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-
-        .product-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-card:focus-within {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 2px;
-        }
-
-        .product-category {
-            width: 100%;
-            height: 33px;
-            color: var(--text-primary);
-            font-family: 'Helvetica-Bold', -apple-system, sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            text-align: center;
-            line-height: 1.8;
-        }
-
-        .product-image-container {
-            height: 100%;
-            max-height: 194px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .product-image {
-            max-width: 100%;
-            max-height: 100%;
-            height: auto;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .product-details-btn {
-            width: 118px;
-            height: 42px;
-            border-radius: var(--border-radius-pill);
-            background-color: var(--primary-color);
-            color: var(--white);
-            font-family: 'HelveticaNeue-Medium', -apple-system, sans-serif;
-            font-size: 18px;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 17px;
-            transition: background-color var(--transition-fast), transform var(--transition-fast);
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .product-details-btn:hover {
-            background-color: var(--primary-hover);
-            transform: scale(1.02);
-        }
-
-        .product-details-btn:focus {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 2px;
-        }
-
-        .product-details-btn:active {
-            transform: scale(0.98);
-        }
-
-        .is-flipped .quick-view-link {
-            color: var(--primary-color);
-        }
-
-        .quick-view-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--spacing-sm);
-            height: 23px;
-            color: var(--text-secondary);
-            font-family: 'HelveticaNeue-Medium', -apple-system, sans-serif;
-            font-size: 13px;
-            font-weight: 400;
-            text-decoration: none;
-            transition: color var(--transition-fast);
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .quick-view-link:hover,
-        .quick-view-link:focus {
-            color: var(--primary-color);
-        }
-
-        .quick-view-link:hover svg,
-        .quick-view-link:focus svg {
-            fill: var(--primary-color);
-        }
-
-        .quick-view-link:focus {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 2px;
-            border-radius: 2px;
-        }
-
-        .quick-view-link:hover .quick-view-icon path {
-            fill: var(--primary-color);
-        }
-
-        .quick-view-icon {
-            flex-shrink: 0;
-            transition: fill var(--transition-fast);
-        }
-
-        .quick-view-icon path {
-            transition: fill var(--transition-fast);
-        }
-
-        .visibility-off {
-            width: 15px;
-            height: 14px;
-        }
-
-        .visibility-on {
-            width: 15px;
-            height: 10px;
-            margin-bottom: 2px;
-            fill: var(--text-secondary);
-        }
-
-        /* Show visibility by default, hide visibility-off */
-        .quick-view-icon.visibility-off {
-            display: none;
-        }
-
-        .quick-view-icon.visibility-on {
-            display: inline-block;
-        }
-
-        /* When flipped: hide visibility, show visibility-off */
-        .product-card.is-flipped .quick-view-icon.visibility-off {
-            display: inline-block;
-        }
-
-        .product-card.is-flipped .quick-view-icon.visibility-on {
-            display: none;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            main {
-                padding: 24px 16px;
-            }
-
-            .product-cards {
-                gap: 20px;
-                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            }
-
-            .product-card {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .product-cards {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Print styles */
-        @media print {
-            .product-cards {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Reduced motion for accessibility */
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* Front side (default view) */
-        .product-card-front {
-            width: 100%;
-            height: 100%;
-            padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Back side (product overview) */
-        .product-card-back {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 308px;
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 3px;
-            padding: 23px 16px 0 16px;
-            display: flex;
-            flex-direction: column;
-            overflow-y: hidden;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .product-card.is-flipped .product-card-back {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 18px;
-            cursor: pointer;
-            color: #999;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: background-color 0.2s ease, color 0.2s ease;
-            z-index: 10;
-        }
-
-        .close-btn:hover {
-            background-color: #f0f0f0;
-            color: #333;
-        }
-
-        .product-overview-description {
-            font-family: 'HelveticaNeue-Medium', -apple-system, sans-serif;
-            font-size: 12px;
-            line-height: 17px;
-            color: #333333;
-            margin-bottom: 12px;
-        }
-
-        .product-overview-specs {
-            font-family: 'HelveticaNeue-Medium', -apple-system, sans-serif;
-            font-size: 12px;
-            line-height: 17px;
-            color: #333333;
-            margin-bottom: 12px;
-            list-style: none;
-            padding: 0;
-            margin: 5px 0 16px 0;
-        }
-
-        .product-overview-specs li {
-            margin-bottom: 0;
-        }
-
-        .product-overview-certifications {
-            font-family: 'HelveticaNeue-Medium', -apple-system, sans-serif;
-            font-size: 12px;
-            line-height: 17px;
-            color: #333333;
-            margin-bottom: 0;
-        }
-
-        .product-overview-certifications h4 {
-            font-family: 'Helvetica-Bold', -apple-system, sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            margin: 0 0 1px 0;
-            color: #333333;
-        }
-
-        .product-overview-certifications ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .product-overview-certifications li {
-            margin-bottom: 0;
-            position: relative;
-            padding-left: 9px;
-        }
-
-        .product-overview-certifications li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #333333;
-        }
-
-        /* Mobile adjustments for flip cards */
-        @media (max-width: 768px) {
-            .product-card {
-                height: 320px;
-            }
-
-            .product-card-back {
-                padding: 16px 12px 16px 12px;
-            }
-
-            .product-overview-description,
-            .product-overview-specs,
-            .product-overview-certifications {
-                font-size: 11px;
-                line-height: 16px;
-            }
-        }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 
     <!-- Schema.org structured data for products -->
     <script type="application/ld+json">
@@ -592,9 +141,9 @@
     <main id="main-content">
         <h1 class="sr-only">Industrial Ventilation Products</h1>
         <ul class="product-cards" role="list" id="products-grid">
-            <li>
-                <article data-application="special-ventilation restaurant high-temp smoke-control" data-certifications="amca-air-sound ul-705 high-wind" data-impeller="centaxial-wheel" data-drive="belt-drive"
-                    data-housing="spun-aluminum" data-discharge="downblast" class="product-card" itemscope itemtype="https://schema.org/Product">
+            <li data-application="special-ventilation restaurant high-temp smoke-control" data-certifications="amca-air-sound ul-705 high-wind" data-impeller="centaxial-wheel" data-drive="belt-drive"
+                data-housing="spun-aluminum" data-discharge="downblast" class="product-card">
+                <article itemscope itemtype="https://schema.org/Product">
                     <!-- Front side -->
                     <div class="product-card-front">
                         <h3 class="product-category" itemprop="category">Exhaust Hoods</h3>
@@ -643,9 +192,9 @@
                 </article>
             </li>
 
-            <li>
-                <article data-application="restaurant high-temp" data-certifications="ul-restaurant-exhaust ul-smoke-control" data-impeller="mixed-flow-wheel" data-drive="direct-drive" data-housing="fab-h-hood"
-                    data-discharge="upblast" class="product-card" itemscope itemtype="https://schema.org/Product">
+            <li data-application="restaurant high-temp" data-certifications="ul-restaurant-exhaust ul-smoke-control" data-impeller="mixed-flow-wheel" data-drive="direct-drive" data-housing="fab-h-hood"
+                data-discharge="upblast" class="product-card">
+                <article itemscope itemtype="https://schema.org/Product">
                     <!-- Front side -->
                     <div class="product-card-front">
                         <h3 class="product-category" itemprop="category">Filtration</h3>
@@ -691,9 +240,9 @@
                 </article>
             </li>
 
-            <li>
-                <article data-application="special-ventilation smoke-control" data-certifications="amca-feg-sound-air miami-dade oshpd" data-impeller="propeller" data-drive="belt-drive" data-housing="tubular"
-                    data-discharge="downblast" class="product-card" itemscope itemtype="https://schema.org/Product">
+            <li data-application="special-ventilation smoke-control" data-certifications="amca-feg-sound-air miami-dade oshpd" data-impeller="propeller" data-drive="belt-drive" data-housing="tubular"
+                data-discharge="downblast" class="product-card">
+                <article itemscope itemtype="https://schema.org/Product">
                     <!-- Front side -->
                     <div class="product-card-front">
                         <h3 class="product-category" itemprop="category">Supply Plenums</h3>
@@ -739,9 +288,9 @@
                 </article>
             </li>
 
-            <li>
-                <article data-application="restaurant high-temp" data-certifications="ul-705 amca-air-sound" data-impeller="centaxial-wheel" data-drive="direct-drive" data-housing="spun-aluminum" data-discharge="upblast"
-                    class="product-card" itemscope itemtype="https://schema.org/Product">
+            <li data-application="restaurant high-temp" data-certifications="ul-705 amca-air-sound" data-impeller="centaxial-wheel" data-drive="direct-drive" data-housing="spun-aluminum" data-discharge="upblast"
+                class="product-card">
+                <article itemscope itemtype="https://schema.org/Product">
                     <!-- Front side -->
                     <div class="product-card-front">
                         <h3 class="product-category" itemprop="category">Fire Suppression</h3>
@@ -787,9 +336,9 @@
                 </article>
             </li>
 
-            <li>
-                <article data-application="special-ventilation" data-certifications="amca-air-sound" data-impeller="mixed-flow-wheel" data-drive="belt-drive" data-housing="spun-aluminum" data-discharge="downblast"
-                    class="product-card" itemscope itemtype="https://schema.org/Product">
+            <li data-application="special-ventilation" data-certifications="amca-air-sound" data-impeller="mixed-flow-wheel" data-drive="belt-drive" data-housing="spun-aluminum" data-discharge="downblast"
+                class="product-card">
+                <article itemscope itemtype="https://schema.org/Product">
                     <!-- Front side -->
                     <div class="product-card-front">
                         <h3 class="product-category" itemprop="category">Pollution Control</h3>
@@ -835,9 +384,8 @@
                 </article>
             </li>
 
-            <li>
-                <article data-application="restaurant" data-certifications="ul-restaurant-exhaust" data-impeller="propeller" data-drive="direct-drive" data-housing="fab-h-hood" data-discharge="upblast"
-                    class="product-card" itemscope itemtype="https://schema.org/Product">
+            <li data-application="restaurant" data-certifications="ul-restaurant-exhaust" data-impeller="propeller" data-drive="direct-drive" data-housing="fab-h-hood" data-discharge="upblast" class="product-card">
+                <article itemscope itemtype="https://schema.org/Product">
                     <!-- Front side -->
                     <div class="product-card-front">
                         <h3 class="product-category" itemprop="category">Utility Distribution</h3>
