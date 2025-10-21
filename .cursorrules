@@ -586,3 +586,32 @@ All product data should be in static HTML (no data attributes needed):
 ---
 
 **These rules ensure consistent, high-quality, competition-winning code!** 🏆
+
+
+3. right-container
+    - h1
+    - para
+    - buttons
+    -  h2
+    - table
+    -  view more details link
+
+second section
+
+1. nav bar
+2. details of nav bar items
+a. features
+    - in a box : left container img, 
+        right container
+           - standard n optional feature
+           - search button
+           - p in centre
+
+  b. product details
+      - 2 columns, rows with alternate colours
+      - right scroll bar
+c. documents
+    - rows boxes with 2 box items shown in detail
+    - in each box +/- toggle view n hide box items
+        
+        
