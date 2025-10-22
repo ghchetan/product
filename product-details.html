@@ -54,14 +54,38 @@
         --spacing-md: 15px;
         --spacing-lg: 30px;
         --spacing-xl: 32px;
-        --max-content: 1100px;
+        --max-content: 1247px;
+        --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        --font-family-heading: "HelveticaNeue-Medium", -apple-system, sans-serif;
+        --font-family-body: "HelveticaNeue-Medium", -apple-system, sans-serif;
       }
 
-      /* 3. Base styles */
+      /* 3. Font Face Declarations */
+      @font-face {
+        font-family: "Helvetica-Bold";
+        src: url("fonts/Helvetica-Bold.ttf") format("truetype");
+        font-display: swap;
+        font-weight: 700;
+      }
+
+      @font-face {
+        font-family: "HelveticaNeue-Medium";
+        src: url("fonts/HelveticaNeueMedium.otf") format("opentype");
+        font-display: swap;
+        font-weight: 500;
+      }
+
+      @font-face {
+        font-family: "Helvetica";
+        src: url("fonts/Helvetica.otf") format("opentype");
+        font-display: swap;
+        font-weight: 400;
+      }
+
+      /* 4. Base styles */
       body {
-        font-family: "HelveticaNeue-Medium", -apple-system, BlinkMacSystemFont,
-          "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue",
-          "Helvetica", "Arial", sans-serif;
+        font-family: var(--font-family-body);
         color: var(--text-primary);
         line-height: 1.5;
         background: var(--white);
@@ -70,7 +94,7 @@
         display: block;
         max-width: var(--max-content);
         margin: 0 auto;
-        padding: var(--spacing-xl) var(--spacing-md);
+        width: 100%;
       }
 
       /* 4. Utilities */
@@ -121,8 +145,9 @@
       /* Breadcrumb */
       .breadcrumb {
         margin: 0 0 var(--spacing-lg);
-        font-size: 0.875rem;
-        color: var(--text-secondary);
+        font-size: 13px;
+        font-family: "Helvetica-Regular";
+        color: rgba(153, 153, 153, 1);
       }
       .breadcrumb ol {
         list-style: none;
@@ -136,13 +161,15 @@
         display: flex;
         align-items: center;
       }
-      .breadcrumb li:not(:last-child)::after {
-        content: "›";
+      .breadcrumb-arrow {
+        width: 16px;
+        height: 16px;
         margin: 0 8px;
-        color: #9aa3ab;
+        color: rgba(153, 153, 153, 1);
+        fill: currentColor;
       }
       .breadcrumb a {
-        color: inherit;
+        color: rgba(51, 51, 51, 1);
         text-decoration: none;
       }
       .breadcrumb a:hover,
@@ -152,14 +179,19 @@
 
       /* 6. UI components */
       .product-title {
-        font-family: "Helvetica-Bold", -apple-system, sans-serif;
-        font-size: 1.875rem;
-        line-height: 1.2;
+        font-family: var(--font-family-heading);
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 40px;
+        color: rgba(51, 51, 51, 1);
         margin: 0 0 var(--spacing-md);
       }
       .product-intro {
         margin: 0 0 var(--spacing-lg);
-        color: var(--text-secondary);
+        color: rgba(51, 51, 51, 1);
+        font-size: 13px;
+        font-weight: 400;
+        font-family: var(--font-family);
       }
 
       .actions {
@@ -1109,32 +1141,6 @@
         "name": "CUBE - Centrifugal Upblast Exhaust Fan"
       }
     </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "index.html"
-          },
-          { "@type": "ListItem", "position": 2, "name": "Fans", "item": "#" },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Blowers",
-            "item": "#"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "USF - Centrifugal Blower"
-          }
-        ]
-      }
-    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -1156,6 +1162,15 @@
               ><span itemprop="name">Home</span></a
             >
             <meta itemprop="position" content="1" />
+            <svg
+              class="breadcrumb-arrow"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+              />
+            </svg>
           </li>
           <li
             itemprop="itemListElement"
@@ -1164,6 +1179,15 @@
           >
             <a itemprop="item" href="#"><span itemprop="name">Fans</span></a>
             <meta itemprop="position" content="2" />
+            <svg
+              class="breadcrumb-arrow"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+              />
+            </svg>
           </li>
           <li
             itemprop="itemListElement"
@@ -1172,6 +1196,15 @@
           >
             <a itemprop="item" href="#"><span itemprop="name">Blowers</span></a>
             <meta itemprop="position" content="3" />
+            <svg
+              class="breadcrumb-arrow"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+              />
+            </svg>
           </li>
           <li
             itemprop="itemListElement"
